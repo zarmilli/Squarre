@@ -1,0 +1,163 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  padding: 1rem;
+  background: #fff;
+}
+
+.back {
+  font-size: 2rem;
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+
+.summary-card {
+  background: #000;
+  border-radius: 10px;
+  padding: 1.2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+  color: #fff;
+}
+
+.summary-name, .summary-bank {
+  font-weight: bold;
+}
+
+.summary-bank {
+    margin-top: 20px;
+}
+
+.summary-account {
+  font-weight: bold;
+  font-size: 1.0rem;
+  margin-top: 0px;
+}
+
+.form input {
+  display: block;
+  width: 90%;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background: #f5f5f5;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  color: black;
+}
+
+input::placeholder {
+  color: #888;
+}
+
+.payshap-section {
+  margin: 1rem 0;
+}
+
+.payshap-section label {
+  margin-right: 1rem;
+  font-weight: 500;
+}
+
+button {
+  width: 100%;
+  background: black;
+  color: white;
+  padding: 1rem;
+  border: none;
+  font-size: 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* Toast */
+#toast {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #333;
+  color: white;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  z-index: 999;
+}
+
+#toast.show {
+  opacity: 1;
+}
+
+#toast.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+select.dropdown {
+  width: 100%;
+  padding: 1rem;
+  background: #f5f5f5;
+  border: none;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  color: black;
+}
+
+select.dropdown:invalid {
+  color: #888;
+}
+
+.switch-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem 0;
+  font-weight: bold;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 28px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  background-color: #ccc;
+  border-radius: 34px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: 0.4s;
+}
+
+.slider:before {
+  content: "";
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.7s;
+}
+
+input:checked + .slider {
+  background-color: #000;
+}
+
+input:checked + .slider:before {
+  transform: translateX(22px);
+}

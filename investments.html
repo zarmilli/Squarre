@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="theme-color" content="#000">
+  <title>Investment Tracker</title>
+  <link rel="stylesheet" href="CSS/investments.css" />
+  <link rel="icon" href="imgs/logo.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body style="background: url('imgs/adminbg.jpg') no-repeat center center fixed; background-size: cover;">
+  
+  <!-- Sidebar -->
+    <div class="layout">
+    <div class="sidebar collapsed" id="sidebar">
+      <div class="sidebar-content">
+        <h3>Menu</h3>
+        <ul>
+          <li><a href="admin.html">Overview</a></li>
+          <li><a href="investments.html">Investments</a></li>
+          <li><a href="withdrawals.html">Withdrawals</a></li>
+        </ul>
+      </div>
+    </div>
+
+  <!-- Unauthorized popup -->
+  <div id="unauthorizedPopup" class="hidden popup-overlay">
+    <div class="popup-card">
+      <p>Looks like you don't belong here, but if you'd like to work as an admin, submit your CV to service.squaregold@gmail.com</p>
+      <button onclick="redirectHome()">Okay</button>
+    </div>
+  </div>
+
+  <!-- Main section -->
+  <section class="main-content">
+    <button class="toggle-btn" id="toggleSidebar">☰</button>
+    <h2 class="page-title">Active Investment Assets</h2>
+    <div id="investmentList" class="cards-container">
+      <!-- Cards will be injected here -->
+    </div>
+  </section>
+
+  <script type="module" src="JS/investments.js"></script>
+</body>
+</html>

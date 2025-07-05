@@ -1,0 +1,191 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: url('imgs/background2.jpeg') no-repeat center center/cover;
+  color: white;
+}
+
+.layout {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* SIDEBAR */
+.sidebar {
+  width: 200px;
+  transition: width 0.3s ease;
+  backdrop-filter: blur(12px);
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+}
+
+.sidebar.collapsed {
+  width: 0px;
+}
+
+.sidebar.collapsed {
+  display: none;
+}
+
+.sidebar .sidebar-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.sidebar h3 {
+  margin-top: 0;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li a {
+  color: gold;
+  text-decoration: none;
+  font-weight: bold;
+  display: block;
+  padding: 0.5rem 0;
+}
+
+/* MAIN CONTENT */
+.main-content {
+  flex: 1;
+  padding: 1rem 2rem;
+  transition: margin-left 0.3s ease;
+  overflow-y: auto;
+}
+
+.toggle-btn {
+  backdrop-filter: blur(10px);
+  background-color: rgba(0, 0, 0, 0.1);
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+
+/* HEADER + METRICS */
+.blur-header {
+  backdrop-filter: blur(10px);
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  margin-bottom: 2rem;
+  border-radius: 10px;
+}
+
+.back-btn {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+}
+
+.metrics div {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 1rem;
+  border-radius: 10px;
+  text-align: center;
+}
+
+/* WITHDRAWALS TABLE */
+.withdrawals-card {
+  backdrop-filter: blur(10px);
+  background: rgba(255,255,255,0.1);
+  padding: 1rem;
+  border-radius: 12px;
+}
+
+.withdrawals-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.view-all-btn {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+  padding: 10px 20px;
+  border: none;
+  color: gold;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+table {
+  width: 100%;
+  margin-top: 1rem;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 0.8rem;
+  text-align: left;
+}
+
+td .chip {
+  padding: 0.2rem 0.6rem;
+  border-radius: 12px;
+  color: #fff;
+  font-size: 0.9rem;
+}
+
+td .chip.payshap-true { background: limegreen; }
+td .chip.payshap-false { background: crimson; }
+
+td select.status-dropdown {
+  padding: 0.4rem;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.8);
+  border: none;
+  font-weight: bold;
+}
+
+/* POPUP */
+.popup-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex; align-items: center; justify-content: center;
+  z-index: 1000;
+}
+
+.popup-card {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  max-width: 300px;
+  text-align: center;
+  color: #000;
+}
+
+.popup-card button {
+  margin-top: 1rem;
+  padding: 0.6rem 1.5rem;
+  background: #000;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}

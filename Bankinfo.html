@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bank Info</title>
+  <link rel="stylesheet" href="CSS/bank.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="back" onclick="history.back()">&lt;&lt;</div>
+
+  <div class="summary-card" id="summaryCard">
+    <div>
+      <div class="summary-name" id="summaryName">No data</div>
+      <div class="summary-bank" id="summaryBank">No data</div>
+    </div>
+    <div class="summary-account" id="summaryAccount">No data</div>
+  </div>
+
+  <h2>Update details</h2>
+
+  <div class="form">
+    <select id="bankName" class="dropdown">
+        <option value="" disabled selected>Select your bank</option>
+        <option value="Capitec bank">Capitec bank</option>
+        <option value="Absa">Absa</option>
+        <option value="Standard bank">Standard bank</option>
+        <option value="FNB">FNB</option>
+        <option value="Nedbank">Nedbank</option>
+        <option value="Tymebank">Tymebank</option>
+        <option value="Old Mutual">Old Mutual</option>
+    </select>
+    <input type="text" id="accountNumber" placeholder="Account number" />
+    <input type="text" id="accountHolder" placeholder="Account holder" />
+    <input type="text" id="cellNumber" placeholder="Cell number" />
+
+    <div class="switch-row">
+      <label for="payshapToggle">Payshap registered</label>
+      <label class="switch">
+        <input type="checkbox" id="payshapToggle" />
+        <span class="slider"></span>
+      </label>
+    </div>
+
+    <button onclick="updateBankInfo()">Update</button>
+  </div>
+
+  <div id="toast" class="hidden"></div>
+
+  <script type="module" src="JS/bank.js"></script>
+</body>
+</html>

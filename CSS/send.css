@@ -1,0 +1,131 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: #ffffff;
+  padding: 1.5rem;
+  color: #121212;
+}
+
+.container {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.back-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+
+.card {
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  padding: 1rem 1.2rem;
+  margin-bottom: 1.2rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.user-card {
+  text-align: center;
+}
+
+.user-card p {
+  font-size: 0.9rem;
+  color: #888;
+  margin-bottom: 0.4rem;
+}
+
+.user-card h3 {
+  font-size: 1.3rem;
+  color: #121212;
+}
+
+.wallet-display {
+  font-family: monospace;
+  font-size: 1rem;
+  background-color: #eaeaea;
+  padding: 0.5rem;
+  border-radius: 6px;
+}
+
+label {
+  display: block;
+  font-size: 0.85rem;
+  margin-bottom: 0.4rem;
+  color: #444;
+}
+
+input {
+  width: 100%;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #fff;
+  font-size: 1rem;
+  box-shadow: inset 0 0 0 1px #ddd;
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+input:focus {
+  outline: none;
+  box-shadow: inset 0 0 0 2px #000;
+}
+
+.pay-button {
+  width: 100%;
+  padding: 1rem;
+  background-color: #000;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+  text-transform: capitalize;
+}
+
+.pay-button:hover {
+  background-color: #333;
+}
+
+.toast {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  font-weight: bold;
+  color: white;
+  z-index: 9999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  width: 200px;
+  text-align: center;
+}
+
+.toast.success {
+  background-color: #4caf50;
+}
+
+.toast.error {
+  background-color: #d32f2f;
+}
+
+.toast.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.toast.hidden {
+  opacity: 0;
+}

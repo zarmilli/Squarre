@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Withdraw</title>
+  <link rel="stylesheet" href="CSS/withdraw.css" />
+</head>
+<body>
+  <div class="back" onclick="history.back()">&lt;&lt;</div>
+
+  <div class="balance-card">
+    <span>Available</span>
+    <span id="balance">R0.00</span>
+  </div>
+
+  <div class="account-card">
+    <span>Account</span>
+    <span id="accountNumber">No Data</span>
+  </div>
+
+  <h2>Withdraw</h2>
+  <div class="dialpad-wrapper">
+    <div class="dialpad" id="dialpad">
+      <!-- Dialpad will be generated here by JS -->
+    </div>
+    <button class="delete-card" id="deleteBtn">
+    <img src="imgs/delete.svg" alt="delete" />
+    </button>
+
+
+  <button id="withdrawBtn">Withdraw R0.00</button>
+
+  <div id="successPopup" class="popup hidden">
+    <div class="popup-content">
+      <h3>Withdrawal Request Sent</h3>
+      <p>Funds will reflect in 1–3 business days.<br>Payshap clients: within 2 hours.</p>
+      <button id="closePopupBtn">Okay</button>
+    </div>
+  </div>
+
+  <div id="toast" class="hidden"></div>
+
+  <script type="module" src="JS/withdraw.js"></script>
+</body>
+</html>

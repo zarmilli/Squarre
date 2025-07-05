@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Home</title>
+  <link rel="stylesheet" href="CSS/home.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body style="background-color: #ffffff;">
+  <div class="top-bar">
+    <div>
+      <h1 id="greetingUsername">Loading...</h1>
+      <p>Overview</p>
+    </div>
+    <img src="imgs/logo.png" alt="Logo" class="logo" />
+  </div>
+
+  <div class="balance-card">
+  <div class="balance-header">
+    <p>My Balance</p>
+    <span>ZAR</span>
+  </div>
+  <div class="balance-amount">
+    <span class="currency">R</span>
+    <span class="amount" id="userBalance">Loading...</span>
+  </div>
+</div>
+
+  <div class="action-card">
+    <div class="action" id="action1">
+      <img src="imgs/deposit.svg" alt="Deposit" />
+      <p>Fund</p>
+    </div>
+    <div class="action" id="action2">
+      <img src="imgs/withdraw.svg" alt="Withdraw" />
+      <p>Spend</p>
+    </div>
+    <div class="action" id="action3">
+      <img src="imgs/send.svg" alt="Send" />
+      <p>Send</p>
+    </div>
+    <div class="action" id="action4">
+      <img src="imgs/invest.svg" alt="Invest" />
+      <p>Invest</p>
+    </div>
+  </div>
+
+  <h2 class="section-title">My Cards</h2>
+
+  <div class="card-container">
+  <div class="bank-card">
+    <img src="imgs/Back card.jpeg" alt="Card Background" class="card-bg" />
+    <div class="card-overlay"></div>
+    <div class="card-content">
+      <div class="card-top">
+        <span id="card-number">Loading...</span>
+        <img src="imgs/rss.svg" alt="Logo" class="card-logo" />
+      </div>
+      <div class="card-bottom">
+        <div class="card-label">Cash Balance</div>
+        <span class="currency">R</span>
+        <span class="amount" id="userBalanceCard">Loading...</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="bank-card">
+    <img src="imgs/back card2.jpeg" alt="Card Background" class="card-bg" />
+    <div class="card-overlay"></div>
+    <div class="card-content">
+      <div class="card-top">
+        <span id="investment-card-number">Loading...</span>
+        <img src="imgs/rss.svg" alt="Logo" class="card-logo" />
+      </div>
+      <div class="card-bottom">
+        <div class="card-label">Investment Balance</div>
+        <span class="currency">R</span>
+        <span class="amount" id="investmentBalance">Loading...</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="navbar">
+    <img src="imgs/home.svg" alt="Home" onclick="location.href='home.html'" />
+    <img src="imgs/globe.svg" alt="Market" onclick="location.href='market.html'" />
+    <img src="imgs/user.svg" alt="Profile" onclick="location.href='profile.html'" />
+    <img src="imgs/settings.svg" alt="Settings" onclick="location.href='settings.html'" />
+  </div>
+
+  <div id="toast" class="toast hidden"></div>
+  <script type="module" src="JS/home.js"></script>
+</body>
+</html>

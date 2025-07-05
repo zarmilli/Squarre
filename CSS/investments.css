@@ -1,0 +1,147 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  color: white;
+}
+
+.sidebar {
+  width: 200px;
+  transition: width 0.3s ease;
+  backdrop-filter: blur(12px);
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+}
+
+.sidebar.collapsed {
+  width: 0px;
+}
+
+.sidebar.collapsed {
+  display: none;
+}
+
+.sidebar .sidebar-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.sidebar h3 {
+  margin-top: 0;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li a {
+  color: gold;
+  text-decoration: none;
+  font-weight: bold;
+  display: block;
+  padding: 0.5rem 0;
+}
+
+.toggle-btn {
+  backdrop-filter: blur(10px);
+  background-color: rgba(0, 0, 0, 0.1);
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+
+.main-content {
+  flex: 1;
+  padding: 1rem 2rem;
+  transition: margin-left 0.3s ease;
+  overflow-y: auto;
+}
+
+.page-title {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.investment-entry {
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(12px);
+  padding: 1rem;
+  border-radius: 12px;
+  color: white;
+}
+
+.investment-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.investment-meta {
+  font-size: 0.9rem;
+  margin: 1rem 0;
+}
+
+.investment-timer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.timer {
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 0.4rem 0.6rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+}
+
+.start-btn {
+  background: #fff;
+  color: #000;
+  border: none;
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.popup-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex; align-items: center; justify-content: center;
+  z-index: 200;
+}
+
+.popup-card {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  max-width: 300px;
+  text-align: center;
+  color: black;
+}
+
+.popup-card button {
+  margin-top: 1rem;
+  padding: 0.6rem 1.5rem;
+  background: #000;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Settings</title>
+  <link rel="stylesheet" href="CSS/settings.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="settings-header">
+    <div class="header-overlay">
+      <div class="username" id="username">Hi, User</div>
+      <div class="balance" id="balance">R0.00</div>
+    </div>
+  </div>
+
+  <ul class="settings-menu">
+  <li onclick="logout()"><img src="imgs/logout.svg" /> Logout</li>
+  <li onclick="location.href='account.html'"><img src="imgs/user.svg" /> Account</li>
+  <li onclick="location.href='Bankinfo.html'"><img src="imgs/bank.svg" /> Bank details</li>
+  <li onclick="location.href='https://wa.me/27682734215'"><img src="imgs/support.svg" /> Support</li>
+  <li onclick="location.href='https://sgfarms.company.site'"><img src="imgs/web.svg" /> Website</li>
+  <li onclick="location.href='https://www.instagram.com/squaregold.farms'"><img src="imgs/insta.svg" /> Follow us</li>
+  <li onclick="location.href='faq.html'"><img src="imgs/faq.svg" /> FAQ</li>
+  <li onclick="location.href='admin.html'"><img src="imgs/admin.svg" /> Admin</li>
+</ul>
+
+
+  <nav class="navbar">
+    <a href="home.html"><img src="imgs/home.svg" /></a>
+    <a href="market.html"><img src="imgs/globe.svg" /></a>
+    <a href="profile.html"><img src="imgs/user.svg" /></a>
+    <a href="settings.html" class="active"><img src="imgs/settings.svg" /></a>
+  </nav>
+
+  <script type="module" src="JS/settings.js"></script>
+  <div id="toast" class="toast hidden"></div>
+  <script type="module">
+  import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm";
+
+  const supabase = createClient(
+    "https://blmjdyhhqgqbycntysip.supabase.co", 
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJsbWpkeWhocWdxYnljbnR5c2lwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDg5NTE2NDgsImV4cCI6MjA2NDUyNzY0OH0.v-DdY4a2bwv70UOtIFKG10bhd5WnAzxQpWfJ3Zqk34Q"
+  );
+
+  window.logout = async function () {
+    const { error } = await supabase.auth.signOut();
+    if (!error) {
+      window.location.href = "index.html";
+    } else {
+      console.error("Logout failed:", error.message);
+    }
+  };
+</script>
+</body>
+</html>

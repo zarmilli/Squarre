@@ -1,0 +1,7 @@
+[functions.process-matured-investments]
+enabled = true
+verify_jwt = true
+import_map = "./functions/process-matured-investments/deno.json"
+entrypoint = "./functions/process-matured-investments/index.ts"
+[functions.verify-deposit]
+verify_jwt = false
