@@ -7,18 +7,90 @@
 
 body {
   min-height: 100vh;
-  padding: 2rem;
   font-family: 'Poppins', sans-serif;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-/* Logo */
-.logo {
-  width: 60px;
-  height: auto;
-  border-radius: 4px;
+/* Bank Card */
+.bank-card {
+  position: relative;
+  width: 80%;
+  height: 180px;
+  border-radius: 16px;
+  overflow: hidden;
+  margin-top: 2rem;
+  margin-left: 1rem;
+
+}.bank-card2 {
+  position: relative;
+  width: 80%;
+  height: 180px;
+  border-radius: 16px;
+  overflow: hidden;
+  margin-top: -7rem;
+  margin-bottom: 1rem;
+  margin-left: 3.5rem;
+}
+
+.card-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0.8rem;
+  z-index: 2;
+}
+
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.card-type {
+  font-weight: bold;
+}
+
+.card-blur {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40%;
+  background: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 1;
+}
+
+.card-bottom {
+  position: relative;
+  z-index: 2;
+}
+
+.balance-label {
+  font-size: 0.75rem;
+  opacity: 0.8;
+}
+
+.balance-amount {
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
 /* Bottom Section */
@@ -28,6 +100,8 @@ body {
   align-items: flex-start;
   gap: 1.5rem;
   padding-bottom: 2rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 
 /* Text Content */
@@ -52,7 +126,7 @@ body {
 }
 
 .btn {
-  background: #cfb53b;
+  background: #d8b277;
   color: black;
   text-align: center;
   padding: 1rem;
@@ -65,7 +139,8 @@ body {
 
 .btn:hover {
   transform: scale(1.01);
-  background: #f0f0f0;
+  background: #000;
+  color: #d8b277;
 }
 
 .glass-button {
@@ -97,6 +172,7 @@ body {
 
 .fade-delay-1 { animation-delay: 0.2s; }
 .fade-delay-2 { animation-delay: 0.5s; }
+.fade-delay-4 { animation-delay: 0.9s; }
 .fade-delay-3 { animation-delay: 0.8s; }
 
 @keyframes fadeIn {

@@ -3,27 +3,31 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#000">
   <title>Login</title>
   <link rel="stylesheet" href="CSS/get-started.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm" type="module"></script>
 </head>
-<body style="background: url('imgs/background2.jpeg') no-repeat center center / cover">
+<body style="background-color: black;">
 
-    <!-- Back Button -->
-  <div class="back-button">
-    <a href="options.html">
-      <img src="imgs/back.svg" alt="Back" class="back-icon" />
-    </a>
+  <!-- Back Button -->
+  <a href="options.html" class="back-icon"><<</a>
+
+  <!-- Welcome Card with Background and Animated Glow Text -->
+  <div class="welcome-card">
+    <img src="imgs/card2-p.jpg" alt="Card Background" class="welcome-bg" />
+    <div class="welcome-text">Welcome back!</div>
   </div>
-  
+
+  <!-- Login Form -->
   <div class="form-wrapper">
     <form class="loginForm">
       <h2>Login</h2>
       <input type="email" id="login-email" placeholder="Email" required />
       <input type="password" id="login-password" placeholder="Password" required />
       <button type="submit">Login</button>
-      <a href="#" class="forgot-password">Forgot password?</a>
+      <a href="reset-password.html" class="forgot-password">Forgot password?</a>
     </form>
   </div>
 

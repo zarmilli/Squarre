@@ -30,6 +30,9 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
     }
 
+    // Save login timestamp (for 20 min timeout)
+    localStorage.setItem("loginTimestamp", Date.now())
+
     window.location.href = "home.html";
   });
 
