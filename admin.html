@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="theme-color" content="#000">
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="CSS/admin.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="icon" href="imgs/logo.png" type="image/png">
+</head>
+<body style="background: url('imgs/adminbg.jpg') no-repeat center center fixed; background-size: cover;">
+
+  <div id="unauthorizedPopup" class="hidden popup-overlay">
+    <div class="popup-card">
+      <p>Looks like you don't belong here, but if you'd like to work as an admin, submit your CV to service.squaregold@gmail.com</p>
+      <button onclick="redirectHome()">Okay</button>
+    </div>
+  </div>
+
+  <div class="layout">
+    <div class="sidebar collapsed" id="sidebar">
+      <div class="sidebar-content">
+        <h3>Menu</h3>
+        <ul>
+          <li><a href="admin.html">Overview</a></li>
+          <li><a href="investments.html">Investments</a></li>
+          <li><a href="withdrawals.html">Withdrawals</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="main-content">
+      <button class="toggle-btn" id="toggleSidebar">☰</button>
+
+      <header class="blur-header">
+        <button class="back-btn" onclick="location.href='settings.html'">&lt;&lt; Back</button>
+        <div class="metrics">
+          <div><h4>Revenue</h4><h2 id="totalRevenue">R0.00</h2></div>
+          <div><h4>Total Invested</h4><h2 id="totalInvested">R0.00</h2></div>
+          <div><h4>Total Fees Accrued</h4><h2 id="totalFees">R0.00</h2></div>
+          <div><h4>Active Users</h4><h2 id="activeUsers">0</h2></div>
+          <div><h4>Active Investors</h4><h2 id="activeInvestors">0</h2></div>
+          <div><h4>Active Investments</h4><h2 id="activeInvestments">0</h2></div>
+        </div>
+      </header>
+
+      <section class="withdrawals-card">
+        <div class="withdrawals-header">
+          <h3>Pending Withdrawals</h3>
+          <button class="view-all-btn" onclick="location.href='withdrawals.html'">View all</button>
+        </div>
+        <table id="withdrawalsTable">
+          <thead>
+            <tr>
+              <th>Username</th><th>Bank</th><th>Account</th><th>Payshap</th><th>Phone</th><th>Amount</th><th>Status</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </section>
+    </div>
+  </div>
+
+  <script type="module" src="JS/admin.js"></script>
+</body>
+</html>

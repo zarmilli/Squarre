@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Account</title>
+  <link rel="stylesheet" href="CSS/profile.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="container">
+    <h2>My Account</h2>
+
+    <div class="balance-card">
+      <img src="imgs/Back card.jpeg" alt="Card Background" class="card-bg" />
+      <div class="card-content">
+        <div class="card-pill" id="walletAddress">
+          <span id="walletAddress">*Loading...</span>
+          <img src="imgs/copy.svg" alt="Copy Icon" />
+        </div>
+        <p class="balance-label">Your Balance</p>
+        <p class="balance-amount">R <span id="userBalance">Loading...</span></p>
+      </div>
+    </div>
+
+    <div class="action-card">
+      <div class="action" id="action1">
+        <img src="imgs/deposit.svg" alt="Deposit" />
+        <p>Fund</p>
+      </div>
+      <div class="action" id="action2">
+        <img src="imgs/withdraw.svg" alt="Withdraw" />
+        <p>Spend</p>
+      </div>
+      <div class="action" id="action3">
+        <img src="imgs/send.svg" alt="Send" />
+        <p>Send</p>
+      </div>
+      <div class="action" id="action4">
+        <img src="imgs/invest.svg" alt="Invest" />
+        <p>Invest</p>
+      </div>
+    </div>
+
+    <div class="transactions-section">
+      <div class="transaction-header">
+        <h3>Transaction History</h3>
+        <a href="transactions.html">View all &gt;</a>
+      </div>
+
+      <div id="transactionList" class="transaction-list">
+        <!-- JS will populate 4 latest transactions here -->
+      </div>
+    </div>
+
+    <div class="navbar">
+      <a href="home.html"><img src="imgs/home.svg" alt="Home" /></a>
+      <a href="market.html"><img src="imgs/globe.svg" alt="market" /></a>
+      <a href="profile.html"><img src="imgs/user.svg" alt="Profile" /></a>
+      <a href="settings.html"><img src="imgs/settings.svg" alt="Settings" /></a>
+    </div>
+  </div>
+
+  <script type="module" src="JS/profile.js"></script>
+</body>
+</html>

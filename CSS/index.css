@@ -1,0 +1,40 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  background-color: #000000;
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.splash-container {
+  text-align: center;
+  opacity: 0;
+  animation: fadeIn 2s ease forwards;
+}
+
+.logo {
+  width: 90px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.tagline {
+  color: #fff;
+  font-size: 1.25rem;
+  opacity: 0.8;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}

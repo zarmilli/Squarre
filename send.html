@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Send Money</title>
+  <link rel="stylesheet" href="CSS/send.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="container">
+    
+    <!-- Back Button -->
+    <button class="back-btn" onclick="window.location.href='profile.html'">
+      <<
+    </button>
+
+    <!-- Sending to -->
+    <div class="card user-card">
+      <p>Sending to</p>
+      <h3 id="receiverUsername">Awaiting full address</h3>
+    </div>
+
+    <!-- Wallet Info -->
+    <div class="card">
+      <label for="fromWallet">From</label>
+      <p id="fromWallet" class="wallet-display">Loading...</p>
+    </div>
+
+    <div class="card">
+      <label for="toWallet">To</label>
+      <input type="text" id="toWallet" placeholder="Enter wallet address" />
+    </div>
+
+    <!-- Amount -->
+    <div class="card">
+      <label for="amountInput">Amount (ZAR)</label>
+      <input type="number" id="amountInput" placeholder="0.00" />
+    </div>
+
+    <!-- Pay Button -->
+    <button id="payBtn" class="pay-button">pay</button>
+    
+  </div>
+
+  <script type="module" src="JS/send.js"></script>
+  <div id="toast" class="toast hidden"></div>
+</body>
+</html>

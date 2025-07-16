@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <title>FAQ - Squarre</title>
+  <style>
+    body {
+       font-family: 'Poppins', sans-serif;
+      background: #fff;
+      margin: 0;
+      padding: 1.5rem;
+      color: #111;
+    }
+
+    .back-button {
+      font-size: 1.5rem;
+      font-weight: bold;
+      cursor: pointer;
+      margin-bottom: 2rem;
+      display: inline-block;
+    }
+
+    .faq-container {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid #ccc;
+      padding: 1rem 0;
+    }
+
+    .faq-question {
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      font-size: 0.95rem;
+      margin-top: 0.5rem;
+      color: #333;
+    }
+
+    .faq-item.open .faq-answer {
+      max-height: 200px;
+    }
+  </style>
+</head>
+<body>
+  <div class="back-button" onclick="history.back()">&lt;&lt;</div>
+
+  <div class="faq-container">
+    <div class="faq-item">
+      <div class="faq-question">What is Squarre?</div>
+      <div class="faq-answer">Squarre is a smart agricultural investment and transaction platform by square Gold Group built to enourage agriculture development and financial literacy for everyday users. It allows you to grow your money by investing in real-world assets through Square Gold Farms and also send or receive money securely.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">How does Squarre work?</div>
+      <div class="faq-answer">You deposit money into your Squarre wallet, invest in categorized assets, and track your growth. When assets mature, your capital plus interest is automatically returned to your wallet.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">How much can I deposit?</div>
+      <div class="faq-answer">You can deposit as little as R1, and there's no maximum limit. However, investing larger amounts may unlock higher returns based on the asset category.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">When do I get my money?</div>
+      <div class="faq-answer">Returns are credited to your wallet as soon as an investment matures. You can then withdraw or reinvest them at any time.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">How long do withdrawals take?</div>
+      <div class="faq-answer">Withdrawals typically take 1–3 business days to reflect, depending on your bank. We’ll notify you as soon as it's processed.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Is Squarre legit?</div>
+      <div class="faq-answer">Yes, Squarre is built and maintained by Square Gold Group, a registered business committed to transparency and user trust. All funds are protected by strict security protocols.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Who is Square Gold Group?</div>
+      <div class="faq-answer">Square Gold Group is a diversified company based in South Africa. It includes agricultural, property, and tech divisions, all focused on building sustainable wealth and community impact.</div>
+    </div>
+  </div>
+
+  <script>
+    document.querySelectorAll('.faq-question').forEach(q => {
+      q.addEventListener('click', () => {
+        const item = q.parentElement;
+        item.classList.toggle('open');
+      });
+    });
+  </script>
+</body>
+</html>

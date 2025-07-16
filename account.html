@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Account Settings</title>
+  <link rel="stylesheet" href="CSS/account.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <button class="back-btn" onclick="history.back()">&lt;&lt;</button>
+
+  <div class="card">
+    <h3>Update Username</h3>
+    <input type="text" id="currentUsername" placeholder="Current Username" />
+    <input type="text" id="newUsername" placeholder="New Username" />
+    <button onclick="updateUsername()">Update Username</button>
+  </div>
+
+  <div class="card">
+    <h3>Change Password</h3>
+    <input type="password" id="currentPassword" placeholder="Current Password" />
+    <input type="password" id="newPassword" placeholder="New Password" />
+    <button onclick="updatePassword()">Change Password</button>
+  </div>
+
+  <div class="card">
+    <h3>Delete Account</h3>
+    <p>This will permanently delete your profile and all related records.</p>
+    <button class="danger" onclick="deleteAccount()">Delete Account</button>
+  </div>
+
+  <div id="toast" class="toast hidden"></div>
+
+  <script type="module" src="JS/account.js"></script>
+</body>
+</html>
