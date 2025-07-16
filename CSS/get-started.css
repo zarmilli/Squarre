@@ -1,79 +1,117 @@
 body, html {
-  margin: 0;
+  margin: 1rem;
   padding: 0;
   height: 100%;
   font-family: 'Poppins', sans-serif;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  background-color: black;
 }
 
 .back-icon {
   position: absolute;
   top: 1.5rem;
   left: 1.5rem;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
   z-index: 10;
-}
-
-.back-icon img {
-  width: 40px;
-  height: 40px;
-  filter: none;
-  backdrop-filter: none;
   background: none;
+  padding: 0;
   border-radius: 0;
 }
+
+.glow-text-container {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  padding: 2rem;
+  text-align: center;
+  margin-top: 5rem;
+  margin-bottom: 1rem;
+}
+
+@keyframes pulseGlow {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.15);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.3;
+  }
+}
+
+.glow-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 250px;
+  height: 250px;
+  background: #d8b277;
+  border-radius: 50%;
+  filter: blur(80px);
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  opacity: 0.5;
+  animation: pulseGlow 3s ease-in-out infinite;
+}
+
+.glow-text {
+  position: relative;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: white;
+  z-index: 1;
+  line-height: 1.4;
+}
+
 
 /* Wrapper centers the form and adds padding on mobile */
 .form-wrapper {
   width: 100%;
-  padding: 16px;
   display: flex;
   justify-content: center;
-}
-
-.background-image {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -1;
 }
 
 /* Actual form styling */
 .signupForm {
   width: 100%;
   max-width: 400px;
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(10px);
-  border-radius: 16px;
-  padding: 24px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-  color: #fff;
+  padding: 0 16px;
+  color: white;
   box-sizing: border-box;
+  background: none;
+  backdrop-filter: none;
+  box-shadow: none;
+  border-radius: 0;
 }
 
 /* Input styling */
 .signupForm input {
-  width: 92%;
+  width: 100%;
   padding: 12px;
   margin: 12px 0;
   border: none;
   border-radius: 8px;
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.1);
   color: white;
 }
 
 /* Button styling */
 .signupForm button {
-  width: 100%;
+  width: 110%;
   padding: 12px;
   border: none;
   border-radius: 8px;
-  background-color: #cfb53b;
-  color: white;
+  background: #d8b277;
+  color: #000000;
   font-weight: bold;
   cursor: pointer;
   margin-top: 20px;
@@ -90,7 +128,9 @@ body, html {
 }
 
 .signupForm button:hover {
+  border: 1px solid #d8b277;
   background: #000;
+  color: #d8b277;
 }
 
 .back-button {
@@ -122,10 +162,67 @@ body, html {
 /* Apply animation when class is added */
 .signup-form button.clicked {
   animation: buttonClick 0.2s ease;
+  background-color: #000;
+  color: #d8b277;
 }
 
 .back-button.clicked {
     animation: buttonClick 0.2s ease;
+}
+
+/* Welcome Card */
+.welcome-card {
+  position: relative;
+  width: 100%;
+  height: 180px;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 4rem auto 2rem auto;
+}
+
+.welcome-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.welcome-text {
+  position: absolute;
+  left: 1.2rem;
+  bottom: 1.2rem;
+  font-size: 1.8rem;
+  font-weight: 700;
+  background: linear-gradient(
+    to left,
+    #FF6565,
+    #FF64F9,
+    #6B5FFF,
+    #4D8AFF,
+    #5BFF89,
+    #FFEE55,
+    #FF6D1B,
+    #FF6565,
+    #FF64F9,
+    #6B5FFF,
+    #4D8AFF,
+    #5BFF89
+  );
+  background-size: 300% auto;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: textGlowSlide 3s linear infinite;
+}
+
+/* Animate gradient background from right to left */
+@keyframes textGlowSlide {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
 }
 
 .loginForm {
@@ -157,7 +254,7 @@ body, html {
   padding: 12px;
   border: none;
   border-radius: 8px;
-  background-color: #cfb53b;
+  background-color: #d8b277;
   color: white;
   font-weight: bold;
   cursor: pointer;
@@ -208,6 +305,56 @@ body, html {
   transition: opacity 0.3s ease;
   width: 200px;
   text-align: center;
+}
+
+.forgotForm {
+  width: 100%;
+  max-width: 400px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  box-sizing: border-box;
+}
+
+/* Input styling */
+.forgotForm input {
+  width: 92%;
+  padding: 12px;
+  margin: 12px 0;
+  border: none;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+}
+
+/* Button styling */
+.forgotForm button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background-color: #d8b277;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.forgotForm h1 {
+  margin: 0 0 1rem 0;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.forgotForm input::placeholder {
+  color: #ccc;
+}
+
+.forgotForm button:hover {
+  background: #000;
 }
 
 .toast.success { background-color: #4caf50; }

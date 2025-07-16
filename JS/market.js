@@ -32,6 +32,28 @@ document.addEventListener("DOMContentLoaded", async () => {
     return;
   }
 
+  const { data: profile, error: profileError } = await supabase
+  .from("profiles")
+  .select("card_style")
+  .eq("id", user.id)
+  .single();
+
+const selectedStyle = profile?.card_style || 1;
+
+const styleColors = {
+  1: { navbar: "#d8b277", progress: "#d8b277" },
+  2: { navbar: "#171717", progress: "#212121" },
+  3: { navbar: "#281844", progress: "#281844" },
+  4: { navbar: "#0d244b", progress: "#0d244b" },
+  5: { navbar: "#84706a", progress: "#84706a" },
+  6: { navbar: "#875d62", progress: "#875d62" }
+};
+
+const colors = styleColors[selectedStyle] || styleColors[1];
+
+const navbar = document.querySelector(".navbar");
+if (navbar) navbar.style.backgroundColor = colors.navbar;
+
   const container = document.getElementById("investmentList");
 
   investments.forEach(investment => {
@@ -51,21 +73,21 @@ document.addEventListener("DOMContentLoaded", async () => {
     const progress = Math.min(100, (elapsedTime / totalTime) * 100).toFixed(1);
 
     const card = document.createElement("div");
-    card.className = "investment-card";
-    card.innerHTML = `
-      <div class="investment-summary">
-        <img src="${assetInfo.icon}" class="investment-icon" alt="${assetInfo.name}" />
-        <div class="investment-info">
-          <div class="investment-title">${investment.asset_type}</div>
-          <div class="investment-details">
-            R${(investment.unit_price * investment.units).toFixed(2)} • ${assetInfo.duration_weeks} weeks
-          </div>
-          <div class="progress-bar-container">
-            <div class="progress-bar" style="width: ${progress}%"></div>
-          </div>
-        </div>
+card.className = "investment-card";
+card.innerHTML = `
+  <div class="investment-summary">
+    <img src="${assetInfo.icon}" class="investment-icon" alt="${assetInfo.name}" />
+    <div class="investment-info">
+      <div class="investment-title">${investment.asset_type}</div>
+      <div class="investment-details">
+        R${(investment.unit_price * investment.units).toFixed(2)} • ${assetInfo.duration_weeks} weeks
       </div>
-    `;
+      <div class="progress-bar-container">
+        <div class="progress-bar" style="width: ${progress}%; background-color: ${colors.progress};"></div>
+      </div>
+    </div>
+  </div>
+`;
 
     container.appendChild(card);
   });

@@ -3,30 +3,62 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="theme-color" content="#0a0a0a">
   <title>Home</title>
   <link rel="stylesheet" href="CSS/home.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 </head>
-<body style="background-color: #ffffff;">
+<body style="background-color: #0a0a0a;">
   <div class="top-bar">
     <div>
       <h1 id="greetingUsername">Loading...</h1>
-      <p>Overview</p>
+      <p style="color: #999;">Overview</p>
     </div>
     <img src="imgs/logo.png" alt="Logo" class="logo" />
   </div>
 
-  <div class="balance-card">
-  <div class="balance-header">
-    <p>My Balance</p>
-    <span>ZAR</span>
-  </div>
-  <div class="balance-amount">
-    <span class="currency">R</span>
-    <span class="amount" id="userBalance">Loading...</span>
-  </div>
-</div>
+  <!-- Bank Cards Section -->
+  <div class="card-container">
+    <div class="bank-card">
+      <img src="imgs/card1-p.jpg" alt="Primary Card" class="card-bg" id="primary-card-bg" />
+      <div class="card-overlay"></div>
+      <div class="card-content">
+        <div class="card-top">
+          <span id="card-number">Loading...</span>
+          <img src="imgs/rss.svg" alt="Logo" class="card-logo" />
+        </div>
+        <div class="card-bottom">
+          <div class="card-label">Cash Balance</div>
+          <span class="currency">R</span>
+          <span class="amount" id="userBalanceCard">Loading...</span>
+        </div>
+      </div>
+    </div>
 
+    <div class="bank-card">
+      <img src="imgs/card1-s.jpg" alt="Secondary Card" class="card-bg" id="secondary-card-bg" />
+      <div class="card-overlay"></div>
+      <div class="card-content">
+        <div class="card-top">
+          <span id="investment-card-number">Loading...</span>
+          <img src="imgs/rss.svg" alt="Logo" class="card-logo" />
+        </div>
+        <div class="card-bottom">
+          <div class="card-label">Investment Balance</div>
+          <span class="currency">R</span>
+          <span class="amount" id="investmentBalance">Loading...</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Customise Cards Button -->
+  <div class="customise-card" onclick="location.href='customise-cards.html'">
+    Customise Cards
+  </div>
+
+  <!-- Action Buttons -->
+  <h2 class="section-title">Transact</h2>
   <div class="action-card">
     <div class="action" id="action1">
       <img src="imgs/deposit.svg" alt="Deposit" />
@@ -46,50 +78,13 @@
     </div>
   </div>
 
-  <h2 class="section-title">My Cards</h2>
-
-  <div class="card-container">
-  <div class="bank-card">
-    <img src="imgs/Back card.jpeg" alt="Card Background" class="card-bg" />
-    <div class="card-overlay"></div>
-    <div class="card-content">
-      <div class="card-top">
-        <span id="card-number">Loading...</span>
-        <img src="imgs/rss.svg" alt="Logo" class="card-logo" />
-      </div>
-      <div class="card-bottom">
-        <div class="card-label">Cash Balance</div>
-        <span class="currency">R</span>
-        <span class="amount" id="userBalanceCard">Loading...</span>
-      </div>
-    </div>
-  </div>
-
-  <div class="bank-card">
-    <img src="imgs/back card2.jpeg" alt="Card Background" class="card-bg" />
-    <div class="card-overlay"></div>
-    <div class="card-content">
-      <div class="card-top">
-        <span id="investment-card-number">Loading...</span>
-        <img src="imgs/rss.svg" alt="Logo" class="card-logo" />
-      </div>
-      <div class="card-bottom">
-        <div class="card-label">Investment Balance</div>
-        <span class="currency">R</span>
-        <span class="amount" id="investmentBalance">Loading...</span>
-      </div>
-    </div>
-  </div>
-</div>
-
   <div class="navbar">
-    <img src="imgs/home.svg" alt="Home" onclick="location.href='home.html'" />
-    <img src="imgs/globe.svg" alt="Market" onclick="location.href='market.html'" />
-    <img src="imgs/user.svg" alt="Profile" onclick="location.href='profile.html'" />
-    <img src="imgs/settings.svg" alt="Settings" onclick="location.href='settings.html'" />
+    <img src="imgs/home.svg" onclick="location.href='home.html'" />
+    <img src="imgs/user.svg" onclick="location.href='profile.html'" />
+    <img src="imgs/globe.svg" onclick="location.href='market.html'" />
+    <img src="imgs/settings.svg" onclick="location.href='settings.html'" />
   </div>
 
   <div id="toast" class="toast hidden"></div>
   <script type="module" src="JS/home.js"></script>
 </body>
-</html>

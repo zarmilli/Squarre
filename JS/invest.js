@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", async () => {
           icon: "imgs/savings.svg",
           duration: "4+ weeks",
           interest: "7%",
-          price: 1,
+          price: 100,
           description: "Earn passive interest by storing your funds with us for at least 4 weeks — perfect for short-term security."
         },
         {

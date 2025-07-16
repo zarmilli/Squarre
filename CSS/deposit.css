@@ -5,7 +5,7 @@
 }
 
 body {
-  background: white;
+  background: #000;
   font-family: 'Poppins', sans-serif;
   display: flex;
   justify-content: center;
@@ -13,8 +13,19 @@ body {
   height: 100vh;
 }
 
+.back {
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  color: #fff;
+  top: 1rem;
+  left: 1rem;
+}
+
 .container {
-  background: #f5f5f5;
+  background: #171717;
   padding: 2rem;
   border-radius: 12px;
   width: 90%;
@@ -25,21 +36,22 @@ body {
 h2 {
   margin-bottom: 1rem;
   text-align: center;
-  color: #333;
+  color: #fff;
 }
 
 label {
   display: block;
   margin-bottom: 0.5rem;
   font-weight: 600;
-  color: #444;
+  color: #fff;
 }
 
 input[type="number"] {
   width: 100%;
   padding: 0.7rem;
   margin-bottom: 1.5rem;
-  border: 1px solid #ccc;
+  border: 1px solid #242424;
+  background-color: #242424;
   border-radius: 8px;
   font-size: 1rem;
 }
@@ -47,7 +59,7 @@ input[type="number"] {
 .notice {
   background-color: #fff7e6;
   color: #7a5500;
-  border-left: 4px solid #ffc107;
+  border-left: 4px solid #d8b277;
   padding: 0.75rem 1rem;
   margin: 1rem 0;
   font-size: 0.9rem;
@@ -59,7 +71,7 @@ button {
   width: 100%;
   padding: 0.8rem;
   background: black;
-  color: gold;
+  color: #d8b277;
   border: none;
   border-radius: 8px;
   font-size: 1rem;

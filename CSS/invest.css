@@ -1,8 +1,8 @@
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  background-color: #ffffff;
-  color: #000000;
+  background-color: #000;
+  color: #fff;
   padding-bottom: 80px; /* space for fixed navbar */
 }
 
@@ -27,7 +27,7 @@ body {
 }
 
 .investment-card {
-  background-color: #f5f5f5;
+  background-color: #171717;
   border-radius: 12px;
   padding: 1rem;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
@@ -126,7 +126,7 @@ body {
 /* Fixed navbar (same as home) */
 .navbar {
   background-color: #000;
-  padding: 0.5rem 2rem;
+  padding: 1rem 2rem;
   border-radius: 10px;
   margin: 0 1rem;
   display: flex;

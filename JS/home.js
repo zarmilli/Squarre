@@ -13,6 +13,8 @@ document.addEventListener("DOMContentLoaded", async () => {
   const investmentDisplay = document.getElementById("investmentBalance");
   const cardNumber = document.getElementById("card-number");
   const investmentCardNumber = document.getElementById("investment-card-number");
+  const primaryCardBg = document.getElementById("primary-card-bg");
+  const secondaryCardBg = document.getElementById("secondary-card-bg");
 
   // Authenticate user
   const {
@@ -31,7 +33,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   // Fetch profile
   const { data: profile, error: profileError } = await supabase
     .from("profiles")
-    .select("username, balance")
+    .select("username, balance, card_style")
     .eq("id", userId)
     .single();
 
@@ -40,7 +42,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     return;
   }
 
-  const { username, balance } = profile;
+  const { username, balance, card_style } = profile;
   const formattedBalance = parseFloat(balance).toFixed(2);
 
   // Update greeting and main balance
@@ -54,6 +56,26 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   if (cardNumber) cardNumber.textContent = "**** **** **** " + padded.slice(-4);
   if (investmentCardNumber) investmentCardNumber.textContent = "**** **** **** " + padded.slice(-8, -4);
+
+  // Safely handle card_style
+const selectedStyle = profile.card_style || 1;
+
+  // Update card background images based on card_style
+  const styleNum = parseInt(card_style || 1); // default to 1 if null
+  if (primaryCardBg) primaryCardBg.src = `imgs/card${styleNum}-p.jpg`;
+  if (secondaryCardBg) secondaryCardBg.src = `imgs/card${styleNum}-s.jpg`;
+
+  // Set navbar color based on card_style
+const navbar = document.querySelector('.navbar');
+const navbarColors = {
+  1: '#d8b277',
+  2: '#171717',
+  3: '#281844',
+  4: '#0d244b',
+  5: '#84706a',
+  6: '#875d62'
+};
+navbar.style.backgroundColor = navbarColors[selectedStyle] || '#d8b277';
 
   // Fetch investment data using correct column
   const { data: investments, error: invError } = await supabase
@@ -99,4 +121,3 @@ function showToast(message, type = "success") {
   toast.className = `toast show ${type}`;
   setTimeout(() => toast.className = `toast hidden`, 3000);
 }
-

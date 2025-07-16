@@ -97,3 +97,11 @@ function showToast(message, type = "success") {
   toast.className = `toast show ${type}`;
   setTimeout(() => toast.className = `toast hidden`, 3000);
 }
+
+lottie.loadAnimation({
+  container: document.getElementById('lottie-container'),
+  renderer: 'svg',
+  loop: true,
+  autoplay: true,
+  path: 'imgs/KUvXQ2tQgG.json'
+});

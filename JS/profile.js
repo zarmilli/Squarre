@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   // --- Fetch profile
   const { data: profile, error: profileError } = await supabase
     .from("profiles")
-    .select("balance, wallet_address")
+    .select("balance, wallet_address, card_style")
     .eq("id", userId)
     .single();
 
@@ -28,6 +28,28 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 
   const walletAddress = profile.wallet_address;
+
+  const selectedStyle = profile.card_style || 1; // Fallback to style 1 if not set
+
+// Set primary card background image
+const cardImage = document.querySelector(".balance-card .card-bg");
+if (cardImage) {
+  cardImage.src = `imgs/card${selectedStyle}-p.jpg`;
+}
+
+// Set navbar background color
+const navbar = document.querySelector(".navbar");
+const navbarColors = {
+  1: '#d8b277',
+  2: '#171717',
+  3: '#281844',
+  4: '#0d244b',
+  5: '#84706a',
+  6: '#875d62'
+};
+if (navbar) {
+  navbar.style.backgroundColor = navbarColors[selectedStyle] || "#d8b277";
+}
 
   // --- Display masked wallet
   const masked = `**** ${walletAddress.slice(-4)}`;

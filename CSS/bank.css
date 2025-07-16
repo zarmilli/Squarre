@@ -1,17 +1,19 @@
 body {
   font-family: 'Poppins', sans-serif;
   padding: 1rem;
-  background: #fff;
+  background: #000000;
+  color: #fff;
 }
 
 .back {
   font-size: 2rem;
   cursor: pointer;
   margin-bottom: 1rem;
+  color: #fff;
 }
 
 .summary-card {
-  background: #000;
+  background: #171717;
   border-radius: 10px;
   padding: 1.2rem;
   display: flex;
@@ -40,7 +42,7 @@ body {
   width: 90%;
   margin-bottom: 1rem;
   padding: 1rem;
-  background: #f5f5f5;
+  background: #171717;
   border: none;
   border-radius: 10px;
   font-size: 1rem;
@@ -62,7 +64,7 @@ input::placeholder {
 
 button {
   width: 100%;
-  background: black;
+  background: #171717;
   color: white;
   padding: 1rem;
   border: none;
@@ -97,12 +99,12 @@ button {
 select.dropdown {
   width: 100%;
   padding: 1rem;
-  background: #f5f5f5;
+  background: #171717;
   border: none;
   border-radius: 10px;
   margin-bottom: 1rem;
   font-size: 1rem;
-  color: black;
+  color: white;
 }
 
 select.dropdown:invalid {
@@ -133,7 +135,7 @@ select.dropdown:invalid {
 .slider {
   position: absolute;
   cursor: pointer;
-  background-color: #ccc;
+  background-color: #171717;
   border-radius: 34px;
   top: 0;
   left: 0;
@@ -155,7 +157,7 @@ select.dropdown:invalid {
 }
 
 input:checked + .slider {
-  background-color: #000;
+  background-color: green;
 }
 
 input:checked + .slider:before {
