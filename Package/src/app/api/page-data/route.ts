@@ -1,4 +1,4 @@
-import { NextResponse } from '../../../../Package/node_modules/next/server'
+import { NextResponse } from 'next/server'
 
 const avatarList = [
   {
@@ -21,23 +21,23 @@ const avatarList = [
 
 const brandList = [
   {
-    image: '/images/home/brand/zarme-light.svg',
-    darkImg: '/images/home/brand/zarme-dark.svg',
+    image: '/images/home/brand/logoalt.png',
+    darkImg: '/images/home/brand/logo1dark.png',
     title: 'Zarme Atelier',
   },
   {
-    image: '/images/home/brand/elhnon-light.svg',
-    darkImg: '/images/home/brand/elhnon-dark.svg',
+    image: '/images/home/brand/logo2.png',
+    darkImg: '/images/home/brand/logo2dark.png',
     title: 'Elhnon Odnufmon',
   },
   {
-    image: '/images/home/brand/squarre-light.svg',
-    darkImg: '/images/home/brand/squarre-dark.svg',
-    title: 'Squarredesk',
+    image: '/images/home/brand/logo3.png',
+    darkImg: '/images/home/brand/logo3dark.png',
+    title: 'Imperium Gold',
   },
   {
-    image: '/images/home/brand/procuremax-light.svg',
-    darkImg: '/images/home/brand/procuremax-dark.svg',
+    image: '/images/home/brand/logo4.png',
+    darkImg: '/images/home/brand/logo4dark.png',
     title: 'Procuremax',
   },
   {

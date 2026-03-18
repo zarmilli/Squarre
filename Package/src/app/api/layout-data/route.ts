@@ -1,4 +1,4 @@
-import { NextResponse } from "../../../../Package/node_modules/next/server";
+import { NextResponse } from "next/server";
 
 const headerData = [
     { label: 'About us', href: '/#aboutus' },

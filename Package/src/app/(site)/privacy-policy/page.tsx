@@ -1,5 +1,5 @@
-import { Metadata } from "../../../../Package/node_modules/next";
-import Link from "../../../../Package/node_modules/next/link";
+import { Metadata } from "next";
+import Link from "next/link";
 export const metadata: Metadata = {
     title: "Privacy Policy | Awake Agency",
 };
