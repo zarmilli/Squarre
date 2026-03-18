@@ -17,8 +17,8 @@ const Logo: React.FC<HeaderProps> = () => {
             <Image
                 src="/images/logo/logofinal.svg"
                 alt="logo"
-                width={117}
-                height={37}
+                width={160}
+                height={50}
                 quality={100}
                 className='dark:block hidden'
             />

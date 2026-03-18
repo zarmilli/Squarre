@@ -1,4 +1,4 @@
-import { Metadata } from "../../Package/node_modules/next";
+import { Metadata } from "next";
 import Achievements from "./components/home/achievements";
 import Brand from "./components/home/brand";
 import CreativeMind from "./components/home/creative-mind";

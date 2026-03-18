@@ -1,6 +1,6 @@
 
 import ForgotPassword from "@/app/components/auth/forgot-password";
-import { Metadata } from "../../../../../Package/node_modules/next";
+import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Forgot Password | Awake Agency",

@@ -1,5 +1,5 @@
 import SignUp from "@/app/components/auth/sign-up";
-import { Metadata } from "../../../../../Package/node_modules/next";
+import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title:

@@ -1,4 +1,4 @@
-import { Metadata } from "../../../../Package/node_modules/next";
+import { Metadata } from "next";
 import { CareersSimple01 } from "@/components/marketing/careers/careers-simple-01";
 
 export const metadata: Metadata = {

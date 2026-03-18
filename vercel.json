@@ -1,6 +1,0 @@
-{
-  "buildCommand": "cd Package && npm install && npm run build",
-  "outputDirectory": "Package/.next",
-  "installCommand": "echo 'skipping root install'",
-  "framework": "nextjs"
-}

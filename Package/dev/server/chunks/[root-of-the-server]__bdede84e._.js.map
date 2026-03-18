@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 88, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/User/Documents/Squarre%20Frontend/Package/src/proxy.ts"],"sourcesContent":["import { NextResponse } from 'next/server'\nimport type { NextRequest } from 'next/server'\nimport { getToken } from 'next-auth/jwt'\n\nexport async function proxy(request: NextRequest) {\n    const token = await getToken({ req: request })\n    const url = request.nextUrl\n\n    if (token &&\n        (\n            url.pathname.startsWith('/signin') ||\n            url.pathname.startsWith('/signup') ||\n            url.pathname.startsWith('/forgot-password') \n    )) {\n        return NextResponse.redirect(new URL('/', request.url))\n    }\n\n    return NextResponse.next()  // Allow request to proceed\n}\n\nexport const config = {\n    matcher: ['/signin', '/signup', '/forgot-password', '/'],\n};\n"],"names":[],"mappings":";;;;;;AAAA;AAEA;;;AAEO,eAAe,MAAM,OAAoB;IAC5C,MAAM,QAAQ,MAAM,IAAA,wJAAQ,EAAC;QAAE,KAAK;IAAQ;IAC5C,MAAM,MAAM,QAAQ,OAAO;IAE3B,IAAI,SACA,CACI,IAAI,QAAQ,CAAC,UAAU,CAAC,cACxB,IAAI,QAAQ,CAAC,UAAU,CAAC,cACxB,IAAI,QAAQ,CAAC,UAAU,CAAC,mBAChC,GAAG;QACC,OAAO,8IAAY,CAAC,QAAQ,CAAC,IAAI,IAAI,KAAK,QAAQ,GAAG;IACzD;IAEA,OAAO,8IAAY,CAAC,IAAI,GAAI,2BAA2B;;AAC3D;AAEO,MAAM,SAAS;IAClB,SAAS;QAAC;QAAW;QAAW;QAAoB;KAAI;AAC5D"}}]
-}

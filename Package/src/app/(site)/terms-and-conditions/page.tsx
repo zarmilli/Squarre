@@ -1,4 +1,4 @@
-import { Metadata } from "../../../../Package/node_modules/next";
+import { Metadata } from "next";
 export const metadata: Metadata = {
     title: "Terms & Condition | Awake Agency",
 };

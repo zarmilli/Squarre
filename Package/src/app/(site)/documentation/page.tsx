@@ -3,7 +3,7 @@ import { DocNavigation } from '@/app/components/documentation/DocNavigation'
 import { Introduction } from '@/app/components/documentation/Introduction'
 import { PackageStructure } from '@/app/components/documentation/PackageStructure'
 import { QuickStart } from '@/app/components/documentation/QuickStart'
-import { Metadata } from '../../../../Package/node_modules/next'
+import { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Documentation | Awake Agency',
 }
