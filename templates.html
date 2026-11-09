@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-MNVL438X"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Customisable Web Design Templates – Squarredesk</title>
+
+  <link rel="stylesheet" href="templates.css">
+  <link rel="stylesheet" href="footer.css">
+  <link rel="stylesheet" href="card-nav.css">
+  <link rel="stylesheet" href="fonts.css">
+</head>
+<body>
+
+  <card-nav
+        overlay-hero
+        brand-name="Squarredesk"
+        home-href="index.html"
+        cta-href="https://squarredesk.vercel.app/#/auth/sign-up"
+        login-href="https://squarredesk.vercel.app/#/auth/sign-in"
+    >
+    </card-nav>
+
+  <main>
+    <!-- Hero -->
+    <section class="about-hero">
+      <div class="about-hero__banner">
+        <h1 class="about-hero__banner-title">Careers at Squarredesk</h1>
+      </div>
+    </section>
+
+    <section class="templates" data-templates aria-labelledby="templates-title">
+      <div class="templates__inner">
+
+        <h2 class="templates__title" id="templates-title">Browse all templates</h2>
+
+        <!-- Category tabs -->
+        <div class="templates__tabs" role="tablist" aria-label="Template categories">
+          <button class="templates__tab" role="tab" id="templates-tab-all" data-filter="all" aria-selected="true" aria-controls="templates-panel" type="button">All</button>
+          <button class="templates__tab" role="tab" id="templates-tab-personal" data-filter="personal" aria-selected="false" aria-controls="templates-panel" type="button">Personal</button>
+          <button class="templates__tab" role="tab" id="templates-tab-portfolio" data-filter="portfolio" aria-selected="false" aria-controls="templates-panel" type="button">Portfolio</button>
+          <button class="templates__tab" role="tab" id="templates-tab-ecommerce" data-filter="ecommerce" aria-selected="false" aria-controls="templates-panel" type="button">Ecommerce</button>
+          <button class="templates__tab" role="tab" id="templates-tab-business" data-filter="business" aria-selected="false" aria-controls="templates-panel" type="button">Business</button>
+        </div>
+
+        <!--
+          Each template needs:
+          - data-category matching a tab's data-filter
+          - a desktop image (the <img>): a tall full-page screenshot, around 1440px wide
+          - a mobile image (the <source>): a portrait 9:16 screenshot, e.g. 540 x 960
+        -->
+        <div id="templates-panel" role="tabpanel" aria-labelledby="templates-tab-all">
+          <ul class="templates__grid">
+
+            <li data-category="business">
+              <a class="template" href="#" target="_blank" rel="noopener noreferrer">
+                <div class="template__preview">
+                  <picture>
+                    <source media="(max-width: 1024px)" srcset="https://picsum.photos/seed/voltcycle-m/540/960">
+                    <img src="assets/templates/voltcycle.jpeg" alt="" width="1000" height="3000" loading="lazy">
+                  </picture>
+                </div>
+                <div class="template__info">
+                  <h3 class="template__name">Voltcycle</h3>
+                  <span class="template__tag">Business</span>
+                </div>
+              </a>
+            </li>
+
+            <li data-category="ecommerce">
+              <a class="template" href="#" target="_blank" rel="noopener noreferrer">
+                <div class="template__preview">
+                  <picture>
+                    <source media="(max-width: 1024px)" srcset="https://picsum.photos/seed/odnufmon-m/540/960">
+                    <img src="assets/templates/odnufmon.jpeg" alt="" width="1000" height="3000" loading="lazy">
+                  </picture>
+                </div>
+                <div class="template__info">
+                  <h3 class="template__name">Odnufmon</h3>
+                  <span class="template__tag">Ecommerce</span>
+                </div>
+              </a>
+            </li>
+
+            <li data-category="personal">
+              <a class="template" href="#" target="_blank" rel="noopener noreferrer">
+                <div class="template__preview">
+                  <picture>
+                    <source media="(max-width: 1024px)" srcset="https://picsum.photos/seed/lumiere-m/540/960">
+                    <img src="assets/templates/lumiere.jpeg" alt="" width="1000" height="3000" loading="lazy">
+                  </picture>
+                </div>
+                <div class="template__info">
+                  <h3 class="template__name">Lumiere Studio</h3>
+                  <span class="template__tag">Personal</span>
+                </div>
+              </a>
+            </li>
+
+            <li data-category="personal">
+              <a class="template" href="#" target="_blank" rel="noopener noreferrer">
+                <div class="template__preview">
+                  <picture>
+                    <source media="(max-width: 1024px)" srcset="https://picsum.photos/seed/aperture-m/540/960">
+                    <img src="assets/templates/aperture.jpeg" alt="" width="1000" height="3000" loading="lazy">
+                  </picture>
+                </div>
+                <div class="template__info">
+                  <h3 class="template__name">Aperture Studio</h3>
+                  <span class="template__tag">Personal</span>
+                </div>
+              </a>
+            </li>
+
+            <li data-category="ecommerce">
+              <a class="template" href="#" target="_blank" rel="noopener noreferrer">
+                <div class="template__preview">
+                  <picture>
+                    <source media="(max-width: 1024px)" srcset="https://picsum.photos/seed/kickhouse-m/540/960">
+                    <img src="assets/templates/kickhouse.jpeg" alt="" width="1000" height="3000" loading="lazy">
+                  </picture>
+                </div>
+                <div class="template__info">
+                  <h3 class="template__name">Kickhouse</h3>
+                  <span class="template__tag">Ecommerce</span>
+                </div>
+              </a>
+            </li>
+
+            <li data-category="ecommerce">
+              <a class="template" href="#" target="_blank" rel="noopener noreferrer">
+                <div class="template__preview">
+                  <picture>
+                    <source media="(max-width: 1024px)" srcset="https://picsum.photos/seed/belle-m/540/960">
+                    <img src="assets/templates/belle.jpeg" alt="" width="1000" height="3000" loading="lazy">
+                  </picture>
+                </div>
+                <div class="template__info">
+                  <h3 class="template__name">Belle</h3>
+                  <span class="template__tag">Ecommerce</span>
+                </div>
+              </a>
+            </li>
+
+            <li data-category="portfolio">
+              <a class="template" href="#" target="_blank" rel="noopener noreferrer">
+                <div class="template__preview">
+                  <picture>
+                    <source media="(max-width: 1024px)" srcset="https://picsum.photos/seed/christopher-m/540/960">
+                    <img src="assets/templates/chris.jpeg" alt="" width="1000" height="3000" loading="lazy">
+                  </picture>
+                </div>
+                <div class="template__info">
+                  <h3 class="template__name">Christopher</h3>
+                  <span class="template__tag">Portfolio</span>
+                </div>
+              </a>
+            </li>
+
+            <li data-category="business">
+              <a class="template" href="#" target="_blank" rel="noopener noreferrer">
+                <div class="template__preview">
+                  <picture>
+                    <source media="(max-width: 1024px)" srcset="https://picsum.photos/seed/maison-m/540/960">
+                    <img src="assets/templates/maisonco.jpeg" alt="" width="1000" height="3000" loading="lazy">
+                  </picture>
+                </div>
+                <div class="template__info">
+                  <h3 class="template__name">Maison &amp; Co</h3>
+                  <span class="template__tag">Business</span>
+                </div>
+              </a>
+            </li>
+
+          </ul>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer reveal">
+
+      <div class="footer__row footer__row--top">
+        <span class="footer__name">SQUARREDESK</span>
+
+        <div class="footer__contact">
+          <a href="tel:0682734215" class="footer__contact-link" aria-label="Call">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6.5 2h3l1.5 5-2.5 1.5a11 11 0 0 0 5 5L15 11l5 1.5v3a2 2 0 0 1-2 2C10.6 17.5 6.5 13.4 6.5 4a2 2 0 0 1 0-2z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+            </svg>
+          </a>
+
+          <a href="mailto:tlihle351@gmail.com" class="footer__contact-link" aria-label="Email">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M3.5 6.5L12 13L20.5 6.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+
+          <a href="https://wa.me/27682734215" target="_blank" rel="noopener" class="footer__contact-link" aria-label="WhatsApp">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 3a9 9 0 0 0-7.79 13.5L3 21l4.62-1.2A9 9 0 1 0 12 3z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+              <path d="M8.5 8.5c0 4 3 7 7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <nav class="footer__links" aria-label="Footer navigation">
+        <div class="footer__links-column">
+          <h2 class="footer__links-title">Product</h2>
+          <a href="projects.html">Features</a>
+          <a href="pricing.html">Pricing</a>
+          <a href="Updates.html">Updates</a>
+        </div>
+        <div class="footer__links-column">
+          <h2 class="footer__links-title">Company</h2>
+          <a href="about.html">About</a>
+          <a href="careers.html">Careers</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer__links-column">
+          <h2 class="footer__links-title">Resources</h2>
+          <a href="templates.html">Templates</a>
+          <a href="blog.html">Blog</a>
+          <a href="support.html">Support</a>
+        </div>
+        <div class="footer__links-column">
+          <h2 class="footer__links-title">Legal</h2>
+          <a href="terms-of-service.html">Terms of Service</a>
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <a href="refund.html">Refund Policy</a>
+        </div>
+      </nav>
+
+      <div class="footer__row footer__row--bottom">
+        <p class="footer__copyright">
+          &copy; 2026 Squarredesk. Built using
+          <a href="https://squarre.vercel.app" target="_blank" rel="noopener">Squarredesk</a>.
+        </p>
+      </div>
+
+      <h2 class="footer__title">SQUARRE</h2>
+
+    </footer>
+    <!-- Floating Action Button -->
+    <div class="evercare-fab-wrapper" id="evercare-fab-wrapper">
+      <div class="evercare-fab-card" id="evercare-fab-card" aria-hidden="true">
+        <div class="evercare-fab-image">
+          <img src="assets/heroCTA.gif" alt="EverCare cleaning services">
+        </div>
+        <div class="evercare-fab-actions">
+          <a href="https://wa.me/27685213715" class="evercare-fab-action evercare-fab-primary" target="_blank" rel="noopener noreferrer">
+            Chat to agent
+            <svg class="evercare-fab-arrow" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <path d="M5 15 15 5M6 5h9v9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <a href="#book" class="evercare-fab-action evercare-fab-secondary">
+            Get Quote
+            <svg class="evercare-fab-arrow" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <path d="M5 15 15 5M6 5h9v9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <button class="evercare-fab" id="evercare-fab" type="button" aria-label="Open contact options" aria-expanded="false">
+        <span class="evercare-orb" aria-hidden="true">
+          <span class="evercare-orb-glow evercare-orb-glow-one"></span>
+          <span class="evercare-orb-glow evercare-orb-glow-two"></span>
+          <span class="evercare-orb-core"></span>
+        </span>
+      </button>
+    </div>
+  <script src="about.js"></script>
+  <script src="card-nav.js"></script>
+</body>
+</html>

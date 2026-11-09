@@ -1,0 +1,351 @@
+/* Tokens match the home page */
+:root {
+  --ink: #12141a;
+  --body: #3a3f4b;
+  --muted: #5d6270;
+  --accent: #bef164;
+  --white: #ffffff;
+  --pad: clamp(24px, 5vw, 72px);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--white);
+  color: var(--ink);
+  font-family: var(--font-body, "Diatype"), sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Hero */
+.about-hero {
+  background: var(--white);
+}
+
+.about-hero__banner {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  min-height: 80vh;
+  padding: 48px var(--pad);
+  background:
+    linear-gradient(0deg, rgb(0 0 0 / 58%), rgb(0 0 0 / 8%) 65%),
+    url("assets/testimonial2.png") center / cover no-repeat;
+}
+
+.about-hero__banner-title {
+  max-width: 20ch;
+  margin: 0;
+  color: var(--white);
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  text-wrap: balance;
+}
+
+.about-hero__intro {
+  display: flex;
+  justify-content: center;
+  padding: 96px var(--pad);
+}
+
+.about-hero__content {
+  width: min(100%, 900px);
+}
+
+.about-hero__title {
+  max-width: 22ch;
+  margin: 0 auto 32px;
+  margin-bottom: 1.25em;
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 400;
+  line-height: 1.12;
+  letter-spacing: -0.03em;
+  text-align: center;
+  text-wrap: balance;
+}
+
+.about-hero__description p {
+  max-width: 60ch;
+  margin: 0 auto 1.25em;
+  color: var(--body);
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  text-align: justify;
+}
+
+.about-hero__description p:last-child {
+  margin-bottom: 0;
+}
+
+.pricing {
+  --pt-top: 62px; /* set this to your navbar's height (use 0 if the navbar isn't fixed) */
+  padding: clamp(40px, 6vw, 88px) clamp(24px, 5vw, 72px) clamp(64px, 10vw, 140px);
+  background: #fff;
+  color: #12141a;
+  font-family: "Poppins", system-ui, sans-serif;
+}
+
+.pricing__inner { max-width: 1240px; margin: 0 auto; }
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
+
+/* ---------- Plan cards ---------- */
+.plans {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(12px, 1.6vw, 20px);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.plan {
+  display: flex;
+  flex-direction: column;
+  padding: clamp(24px, 2.4vw, 32px);
+  border: 1px solid #e2e5ea;
+  border-radius: 20px;
+  background: #fff;
+}
+
+.plan__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+.plan__name {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+.plan__badge {
+  padding: 3px 12px;
+  border-radius: 999px;
+  background: #bef164;
+  color: #12141a;
+  font-size: 0.75rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.plan__price { margin: 20px 0 0; }
+.plan__amount {
+  font-size: clamp(2.25rem, 3.4vw, 3rem);
+  font-weight: 400;
+  letter-spacing: -0.03em;
+}
+.plan__period { margin-left: 4px; color: #5d6270; font-size: 0.9375rem; }
+
+.plan__desc {
+  min-height: 3.2em;
+  margin: 12px 0 24px;
+  color: #3a3f4b;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+}
+
+.plan__cta {
+  display: block;
+  padding: 13px 20px;
+  border: 1px solid #12141a;
+  border-radius: 999px;
+  color: #12141a;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+.plan__cta:hover { background: #12141a; color: #fff; }
+.plan__cta:focus-visible,
+.pt-cta:focus-visible,
+.pricing__link a:focus-visible { outline: 3px solid #2438ff; outline-offset: 3px; }
+
+.plan__features {
+  display: grid;
+  gap: 12px;
+  margin: 28px 0 0;
+  padding: 24px 0 0;
+  border-top: 1px solid #eceef2;
+  list-style: none;
+}
+.plan__features li {
+  position: relative;
+  padding-left: 28px;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+}
+.plan__features li::before {
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: 0.2em;
+  width: 5px;
+  height: 10px;
+  border: solid currentColor;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+/* Recommended plan */
+.plan--featured {
+  border-color: #12141a;
+  background: #12141a;
+  color: #fff;
+}
+.plan--featured .plan__period,
+.plan--featured .plan__desc { color: rgba(255, 255, 255, 0.78); }
+.plan--featured .plan__cta { border-color: #bef164; background: #bef164; color: #12141a; }
+.plan--featured .plan__cta:hover { border-color: #d0f78a; background: #d0f78a; }
+.plan--featured .plan__features { border-top-color: rgba(255, 255, 255, 0.18); }
+.plan--featured .plan__features li::before { color: #bef164; }
+
+.pricing__link { margin: 32px 0 0; text-align: center; }
+.pricing__link a {
+  color: #12141a;
+  font-weight: 500;
+  text-underline-offset: 4px;
+}
+
+/* ---------- Comparison table ---------- */
+.pricing__heading {
+  margin: clamp(56px, 8vw, 104px) 0 clamp(24px, 3vw, 40px);
+  font-size: clamp(1.75rem, 3.6vw, 2.75rem);
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  scroll-margin-top: var(--pt-top);
+}
+
+.pt {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: separate;
+  border-spacing: 0;
+  text-align: center;
+}
+
+.pt th,
+.pt td {
+  padding: 18px 16px;
+  border-bottom: 1px solid #eceef2;
+  background: #fff;
+  font-size: 0.9375rem;
+  font-weight: 400;
+}
+.pt tbody th[scope="row"] { width: 28%; text-align: left; font-weight: 500; }
+
+/* Plan names stay in view while scrolling the table */
+.pt thead th {
+  position: sticky;
+  top: var(--pt-top);
+  z-index: 3;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #cfd3da;
+  vertical-align: top;
+}
+.pt-plan { display: block; font-size: 1.0625rem; font-weight: 500; }
+.pt-price { display: block; margin: 4px 0 14px; color: #5d6270; font-size: 0.875rem; font-weight: 400; }
+
+.pt-cta {
+  display: inline-block;
+  padding: 8px 20px;
+  border: 1px solid #12141a;
+  border-radius: 999px;
+  color: #12141a;
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+.pt-cta:hover { background: #12141a; color: #fff; }
+.pt-cta--featured { border-color: #12141a; background: #12141a; color: #fff; }
+.pt-cta--featured:hover { background: #2a2e38; }
+
+.pt .pt-featured { background: #f3fce3; }
+
+/* Group headings */
+.pt-group th {
+  padding: 14px 16px;
+  background: #f5f6f8;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  text-align: left;
+  color: #5d6270;
+}
+
+/* Tick and dash, drawn in CSS */
+.pt-yes,
+.pt-no {
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+}
+.pt-yes::before {
+  content: "";
+  position: absolute;
+  left: 7px;
+  top: 2px;
+  width: 6px;
+  height: 11px;
+  border: solid #12141a;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+.pt-no::before {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 9px;
+  width: 12px;
+  height: 2px;
+  background: #b4b9c4;
+}
+
+.pricing__note { margin: 20px 0 0; color: #5d6270; font-size: 0.875rem; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1100px) {
+  .plans { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .plan__desc { min-height: 0; }
+}
+
+/* Tablet and mobile: the table scrolls sideways with the feature names pinned */
+@media (max-width: 900px) {
+  .pt-wrap { overflow-x: auto; margin: 0 calc(clamp(24px, 5vw, 72px) * -1); padding: 0 clamp(24px, 5vw, 72px); }
+  .pt { min-width: 760px; }
+  .pt thead th { position: static; }
+  .pt tbody th[scope="row"] { position: sticky; left: 0; z-index: 1; width: 160px; box-shadow: 1px 0 0 #eceef2; }
+  .pt thead th:first-child { position: sticky; left: 0; z-index: 1; }
+}
+
+@media (max-width: 640px) {
+  .plans { grid-template-columns: minmax(0, 1fr); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .plan__cta,
+  .pt-cta { transition: none; }
+}

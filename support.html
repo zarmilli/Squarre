@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-MNVL438X"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Support & Documentation – Squarredesk</title>
+
+  <link rel="stylesheet" href="support.css">
+  <link rel="stylesheet" href="footer.css">
+  <link rel="stylesheet" href="card-nav.css">
+  <link rel="stylesheet" href="fonts.css">
+</head>
+<body>
+
+  <card-nav
+        overlay-hero
+        brand-name="Squarredesk"
+        home-href="index.html"
+        cta-href="https://squarredesk.vercel.app/#/auth/sign-up"
+        login-href="https://squarredesk.vercel.app/#/auth/sign-in"
+    >
+    </card-nav>
+
+  <main>
+    <!-- Hero -->
+    <section class="about-hero">
+      <div class="about-hero__banner">
+        <h1 class="about-hero__banner-title">Support & Documentation</h1>
+      </div>
+    </section>
+
+    <section class="support" aria-label="Support">
+
+      <!-- Contact cards: same markup as the contact page -->
+      <ul class="contact__grid">
+
+        <li>
+          <a class="contact-card" href="mailto:squarredesk@gmail.com">
+            <div class="contact-card__body">
+              <svg class="contact-card__icon" viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="3" y="5" width="18" height="14" rx="1.5"/>
+                <path d="M3.5 6.5l8.5 6.5 8.5-6.5"/>
+              </svg>
+              <h3 class="contact-card__title">Email us</h3>
+              <div class="contact-card__reveal">
+                <div class="contact-card__reveal-inner">
+                  <p class="contact-card__text">Send us a message and we’ll get back to you as soon as we can.</p>
+                  <span class="contact-card__detail">squarredesk@gmail.com</span>
+                </div>
+              </div>
+            </div>
+          </a>
+        </li>
+
+        <li>
+          <a class="contact-card" href="tel:+27696961824">
+            <div class="contact-card__body">
+              <svg class="contact-card__icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+              </svg>
+              <h3 class="contact-card__title">Call us</h3>
+              <div class="contact-card__reveal">
+                <div class="contact-card__reveal-inner">
+                  <p class="contact-card__text">Prefer to talk? Give us a call.</p>
+                  <span class="contact-card__detail">069 696 1824</span>
+                </div>
+              </div>
+            </div>
+          </a>
+        </li>
+
+        <li>
+          <a class="contact-card" href="https://wa.me/27682734215" target="_blank" rel="noopener noreferrer">
+            <div class="contact-card__body">
+              <svg class="contact-card__icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 20.5l1.6-5.4A8.4 8.4 0 1 1 21 11.5z"/>
+              </svg>
+              <h3 class="contact-card__title">WhatsApp us</h3>
+              <div class="contact-card__reveal">
+                <div class="contact-card__reveal-inner">
+                  <p class="contact-card__text">Message us on WhatsApp for quick questions and support.</p>
+                  <span class="contact-card__detail">068 273 4215</span>
+                </div>
+              </div>
+            </div>
+          </a>
+        </li>
+
+      </ul>
+
+      <!-- Support guides -->
+      <div class="guides" data-guides>
+        <h2 class="guides__title">Support guides</h2>
+
+        <div class="guides__list">
+
+          <!-- Each guide's id is its shareable link: yoursite.com/support#payfast-setup -->
+          <div class="guide" id="payfast-setup">
+            <h3 class="guide__heading">
+              <button class="guide__trigger" id="guide-trigger-payfast" type="button" aria-expanded="false" aria-controls="guide-panel-payfast">
+                <span>Set up PayFast and start receiving payments</span>
+                <svg class="guide__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path class="guide__icon-v" d="M12 5v14"/></svg>
+              </button>
+            </h3>
+            <div class="guide__panel" id="guide-panel-payfast" role="region" aria-labelledby="guide-trigger-payfast">
+              <div class="guide__body">
+                <div class="guide__content">
+
+                  <p class="guide__intro">To accept payments at checkout, you connect your own PayFast merchant account to Squarredesk. This takes about 10 minutes once PayFast has verified your account.</p>
+
+                  <ol class="steps">
+                    <li class="step">
+                      <div class="step__text">
+                        <span class="step__num">Step 1</span>
+                        <h4 class="step__title">Create your PayFast merchant account</h4>
+                        <p>Sign up for a merchant account on the PayFast website and complete their verification. PayFast may ask for personal or business and bank details to verify you, so have them ready.</p>
+                      </div>
+                      <img class="step__image" src="https://picsum.photos/seed/sq-guide-pf1/1600/900" alt="The PayFast sign-up page" width="1600" height="900" loading="lazy">
+                    </li>
+
+                    <li class="step">
+                      <div class="step__text">
+                        <span class="step__num">Step 2</span>
+                        <h4 class="step__title">Find your Merchant ID and Merchant Key</h4>
+                        <p>In your PayFast dashboard, open the integration (developer) settings. You’ll see your Merchant ID and Merchant Key there. Keep this page open, because you’ll need both in a moment.</p>
+                      </div>
+                      <img class="step__image" src="https://picsum.photos/seed/sq-guide-pf2/1600/900" alt="Merchant ID and Merchant Key in the PayFast dashboard" width="1600" height="900" loading="lazy">
+                    </li>
+
+                    <li class="step">
+                      <div class="step__text">
+                        <span class="step__num">Step 3</span>
+                        <h4 class="step__title">Set a security passphrase</h4>
+                        <p>On the same PayFast page, create a passphrase and save it. It protects your payments, and it must match the one you enter in Squarredesk exactly, with no extra spaces.</p>
+                      </div>
+                      <img class="step__image" src="https://picsum.photos/seed/sq-guide-pf3/1600/900" alt="Setting a passphrase in PayFast" width="1600" height="900" loading="lazy">
+                    </li>
+
+                    <li class="step">
+                      <div class="step__text">
+                        <span class="step__num">Step 4</span>
+                        <h4 class="step__title">Connect PayFast in Squarredesk</h4>
+                        <p>In Squarredesk, open Settings, then Payments, and choose PayFast. Paste in your Merchant ID, Merchant Key and passphrase, then save. Checkout is now switched on for your site.</p>
+                      </div>
+                      <img class="step__image" src="https://picsum.photos/seed/sq-guide-pf4/1600/900" alt="The PayFast connection settings in Squarredesk" width="1600" height="900" loading="lazy">
+                    </li>
+
+                    <li class="step">
+                      <div class="step__text">
+                        <span class="step__num">Step 5</span>
+                        <h4 class="step__title">Make a test purchase</h4>
+                        <p>Buy something small from your own site to confirm checkout works and the payment appears in Squarredesk and in your PayFast dashboard. PayFast also has a sandbox for test payments, and its credentials are different from your live ones, so use your live details when you’re ready to go live.</p>
+                      </div>
+                      <img class="step__image" src="https://picsum.photos/seed/sq-guide-pf5/1600/900" alt="A completed test payment" width="1600" height="900" loading="lazy">
+                    </li>
+                  </ol>
+
+                  <p class="guide__tip"><strong>Seeing a signature or security error at checkout?</strong> The passphrase in Squarredesk probably doesn’t match the one saved in PayFast exactly. Copy it again from PayFast, paste it in, and check for stray spaces.</p>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="guide" id="seo">
+            <h3 class="guide__heading">
+              <button class="guide__trigger" id="guide-trigger-seo" type="button" aria-expanded="false" aria-controls="guide-panel-seo">
+                <span>Set up SEO on your Squarredesk site</span>
+                <svg class="guide__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path class="guide__icon-v" d="M12 5v14"/></svg>
+              </button>
+            </h3>
+            <div class="guide__panel" id="guide-panel-seo" role="region" aria-labelledby="guide-trigger-seo">
+              <div class="guide__body">
+                <div class="guide__content">
+
+                  <p class="guide__intro">SEO helps people find your site on search engines like Google. These four steps cover the basics that make the biggest difference.</p>
+
+                  <ol class="steps">
+                    <li class="step">
+                      <div class="step__text">
+                        <span class="step__num">Step 1</span>
+                        <h4 class="step__title">Open your site’s SEO settings</h4>
+                        <p>In Squarredesk, select your site and open its SEO settings. You can set these for the whole site and for each page.</p>
+                      </div>
+                      <img class="step__image" src="https://picsum.photos/seed/sq-guide-seo1/1600/900" alt="The SEO settings in Squarredesk" width="1600" height="900" loading="lazy">
+                    </li>
+
+                    <li class="step">
+                      <div class="step__text">
+                        <span class="step__num">Step 2</span>
+                        <h4 class="step__title">Write a page title and description</h4>
+                        <p>The title is the headline people see in search results, and the description is the short summary beneath it. Aim for a title under about 60 characters and a description under about 160, and mention what you do and where.</p>
+                      </div>
+                      <img class="step__image" src="https://picsum.photos/seed/sq-guide-seo2/1600/900" alt="Page title and description fields" width="1600" height="900" loading="lazy">
+                    </li>
+
+                    <li class="step">
+                      <div class="step__text">
+                        <span class="step__num">Step 3</span>
+                        <h4 class="step__title">Use clear page URLs and image descriptions</h4>
+                        <p>Give each page a short, readable URL, such as /about instead of /page-2. Add a short description (alt text) to your images, which helps search engines and screen readers understand them.</p>
+                      </div>
+                      <img class="step__image" src="https://picsum.photos/seed/sq-guide-seo3/1600/900" alt="Editing a page URL and image alt text" width="1600" height="900" loading="lazy">
+                    </li>
+
+                    <li class="step">
+                      <div class="step__text">
+                        <span class="step__num">Step 4</span>
+                        <h4 class="step__title">Publish and check your site on Google</h4>
+                        <p>Publish your changes, then add your site to Google Search Console so you can see how it appears and how people find it. New sites can take a few days or longer to show up in search results.</p>
+                      </div>
+                      <img class="step__image" src="https://picsum.photos/seed/sq-guide-seo4/1600/900" alt="A site in Google Search Console" width="1600" height="900" loading="lazy">
+                    </li>
+                  </ol>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer reveal">
+
+      <div class="footer__row footer__row--top">
+        <span class="footer__name">SQUARREDESK</span>
+
+        <div class="footer__contact">
+          <a href="tel:0682734215" class="footer__contact-link" aria-label="Call">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6.5 2h3l1.5 5-2.5 1.5a11 11 0 0 0 5 5L15 11l5 1.5v3a2 2 0 0 1-2 2C10.6 17.5 6.5 13.4 6.5 4a2 2 0 0 1 0-2z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+            </svg>
+          </a>
+
+          <a href="mailto:tlihle351@gmail.com" class="footer__contact-link" aria-label="Email">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M3.5 6.5L12 13L20.5 6.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+
+          <a href="https://wa.me/27682734215" target="_blank" rel="noopener" class="footer__contact-link" aria-label="WhatsApp">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 3a9 9 0 0 0-7.79 13.5L3 21l4.62-1.2A9 9 0 1 0 12 3z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+              <path d="M8.5 8.5c0 4 3 7 7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <nav class="footer__links" aria-label="Footer navigation">
+        <div class="footer__links-column">
+          <h2 class="footer__links-title">Product</h2>
+          <a href="projects.html">Features</a>
+          <a href="pricing.html">Pricing</a>
+          <a href="Updates.html">Updates</a>
+        </div>
+        <div class="footer__links-column">
+          <h2 class="footer__links-title">Company</h2>
+          <a href="about.html">About</a>
+          <a href="careers.html">Careers</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer__links-column">
+          <h2 class="footer__links-title">Resources</h2>
+          <a href="templates.html">Templates</a>
+          <a href="blog.html">Blog</a>
+          <a href="support.html">Support</a>
+        </div>
+        <div class="footer__links-column">
+          <h2 class="footer__links-title">Legal</h2>
+          <a href="terms-of-service.html">Terms of Service</a>
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <a href="refund.html">Refund Policy</a>
+        </div>
+      </nav>
+
+      <div class="footer__row footer__row--bottom">
+        <p class="footer__copyright">
+          &copy; 2026 Squarredesk. Built using
+          <a href="https://squarre.vercel.app" target="_blank" rel="noopener">Squarredesk</a>.
+        </p>
+      </div>
+
+      <h2 class="footer__title">SQUARRE</h2>
+
+    </footer>
+    <!-- Floating Action Button -->
+    <div class="evercare-fab-wrapper" id="evercare-fab-wrapper">
+      <div class="evercare-fab-card" id="evercare-fab-card" aria-hidden="true">
+        <div class="evercare-fab-image">
+          <img src="assets/heroCTA.gif" alt="EverCare cleaning services">
+        </div>
+        <div class="evercare-fab-actions">
+          <a href="https://wa.me/27685213715" class="evercare-fab-action evercare-fab-primary" target="_blank" rel="noopener noreferrer">
+            Chat to agent
+            <svg class="evercare-fab-arrow" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <path d="M5 15 15 5M6 5h9v9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <a href="#book" class="evercare-fab-action evercare-fab-secondary">
+            Get Quote
+            <svg class="evercare-fab-arrow" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <path d="M5 15 15 5M6 5h9v9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <button class="evercare-fab" id="evercare-fab" type="button" aria-label="Open contact options" aria-expanded="false">
+        <span class="evercare-orb" aria-hidden="true">
+          <span class="evercare-orb-glow evercare-orb-glow-one"></span>
+          <span class="evercare-orb-glow evercare-orb-glow-two"></span>
+          <span class="evercare-orb-core"></span>
+        </span>
+      </button>
+    </div>
+  <script src="about.js"></script>
+  <script src="card-nav.js"></script>
+</body>
+</html>

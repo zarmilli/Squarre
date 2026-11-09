@@ -1,0 +1,214 @@
+/* Tokens match the home page */
+:root {
+  --ink: #12141a;
+  --body: #3a3f4b;
+  --muted: #5d6270;
+  --accent: #bef164;
+  --white: #ffffff;
+  --pad: clamp(24px, 5vw, 72px);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--white);
+  color: var(--ink);
+  font-family: var(--font-body, "Diatype"), sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Hero */
+.about-hero {
+  background: var(--white);
+}
+
+.about-hero__banner {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  min-height: 80vh;
+  padding: 48px var(--pad);
+  background:
+    linear-gradient(0deg, rgb(0 0 0 / 58%), rgb(0 0 0 / 8%) 65%),
+    url("assets/founderInterview.png") center / cover no-repeat;
+}
+
+.about-hero__banner-title {
+  max-width: 20ch;
+  margin: 0;
+  color: var(--white);
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  text-wrap: balance;
+}
+
+.about-hero__intro {
+  display: flex;
+  justify-content: center;
+  padding: 96px var(--pad);
+}
+
+.about-hero__content {
+  width: min(100%, 900px);
+}
+
+.about-hero__title {
+  max-width: 22ch;
+  margin: 0 auto 32px;
+  margin-bottom: 1.25em;
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 400;
+  line-height: 1.12;
+  letter-spacing: -0.03em;
+  text-align: center;
+  text-wrap: balance;
+}
+
+.about-hero__description p {
+  max-width: 60ch;
+  margin: 0 auto 1.25em;
+  color: var(--body);
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  text-align: justify;
+}
+
+.about-hero__description p:last-child {
+  margin-bottom: 0;
+}
+
+.fs {
+  --fs-top: 62px; /* set this to your navbar's height (use 0 if the navbar isn't fixed) */
+  --fs-ease: cubic-bezier(0.4, 0, 0.2, 1);
+  padding: clamp(24px, 4vw, 48px) clamp(24px, 5vw, 72px);
+  background: #fff;
+  color: #12141a;
+  font-family: "Poppins", system-ui, sans-serif;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
+
+.fs__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  gap: clamp(40px, 6vw, 96px);
+  align-items: start;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+/* ---------- Left: sticky image card ---------- */
+.fs__visual {
+  position: sticky;
+  top: var(--fs-top);
+  display: flex;
+  align-items: center;
+  height: calc(100vh - var(--fs-top));
+  height: calc(100dvh - var(--fs-top));
+}
+
+.fs__frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  max-height: calc(100dvh - var(--fs-top) - 64px);
+  border: 1px solid #e2e5ea;
+  border-radius: 4px;
+  overflow: hidden;
+  background: #eceef2;
+}
+
+.fs__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  opacity: 0;
+  transform: scale(1.03);
+  transition: opacity 0.7s var(--fs-ease), transform 1.2s var(--fs-ease);
+}
+.fs__img.is-active {
+  opacity: 1;
+  transform: none;
+}
+
+/* ---------- Right: scrolling features ---------- */
+.fs__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.fs-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 80vh;
+  min-height: 80dvh;
+  scroll-margin-top: var(--fs-top); /* keeps shared links clear of a fixed navbar */
+}
+
+.fs-item__img { display: none; } /* mobile only */
+
+.fs-item__title {
+  margin: 0 0 20px;
+  font-size: clamp(1.875rem, 3.4vw, 3rem);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  text-wrap: balance;
+}
+
+.fs-item__text {
+  max-width: 44ch;
+  margin: 0;
+  color: #3a3f4b;
+  font-size: clamp(1rem, 1.4vw, 1.1875rem);
+  line-height: 1.7;
+}
+
+/* Features that aren't in view fade back (only when JS is available) */
+@media (scripting: enabled) {
+  .fs-item {
+    opacity: 0.3;
+    transition: opacity 0.5s var(--fs-ease);
+  }
+  .fs-item.is-active { opacity: 1; }
+}
+
+/* ---------- Tablet and mobile: each feature carries its own image ---------- */
+@media (max-width: 860px) {
+  .fs__inner { grid-template-columns: minmax(0, 1fr); }
+  .fs__visual { display: none; }
+
+  .fs-item {
+    min-height: 0;
+    padding-bottom: clamp(48px, 10vw, 72px);
+    opacity: 1;
+  }
+
+  .fs-item__img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    margin-bottom: 24px;
+    border: 1px solid #e2e5ea;
+    border-radius: 16px;
+    object-fit: cover;
+    object-position: top;
+    background: #eceef2;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fs__img,
+  .fs-item { transition: none; }
+}

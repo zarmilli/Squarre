@@ -1,0 +1,242 @@
+/* Tokens match the home page */
+:root {
+  --ink: #12141a;
+  --body: #3a3f4b;
+  --muted: #5d6270;
+  --accent: #bef164;
+  --white: #ffffff;
+  --pad: clamp(24px, 5vw, 72px);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--white);
+  color: var(--ink);
+  font-family: var(--font-body, "Diatype"), sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Hero */
+.about-hero {
+  background: var(--white);
+}
+
+.about-hero__banner {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  min-height: 80vh;
+  padding: 48px var(--pad);
+  background:
+    linear-gradient(0deg, rgb(0 0 0 / 58%), rgb(0 0 0 / 8%) 65%),
+    url("assets/backgrounds/truck.jpg") center / cover no-repeat;
+}
+
+.about-hero__banner-title {
+  max-width: 20ch;
+  margin: 0;
+  color: var(--white);
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  text-wrap: balance;
+}
+
+.about-hero__intro {
+  display: flex;
+  justify-content: center;
+  padding: 96px var(--pad);
+}
+
+.about-hero__content {
+  width: min(100%, 900px);
+}
+
+.about-hero__title {
+  max-width: 22ch;
+  margin: 0 auto 32px;
+  margin-bottom: 1.25em;
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 400;
+  line-height: 1.12;
+  letter-spacing: -0.03em;
+  text-align: center;
+  text-wrap: balance;
+}
+
+.about-hero__description p {
+  max-width: 60ch;
+  margin: 0 auto 1.25em;
+  color: var(--body);
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  text-align: justify;
+}
+
+.about-hero__description p:last-child {
+  margin-bottom: 0;
+}
+
+.blog {
+  padding: clamp(40px, 6vw, 88px) clamp(24px, 5vw, 72px) clamp(64px, 10vw, 140px);
+  background: #fff;
+  color: #12141a;
+  font-family: "Poppins", system-ui, sans-serif;
+}
+
+.blog__inner {
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+[data-blog] [hidden] { display: none !important; }
+
+/* Centred tabs with a divider line (same pattern as the templates section) */
+.blog__tabs {
+  display: flex;
+  gap: clamp(20px, 3.5vw, 40px);
+  margin-bottom: clamp(32px, 5vw, 56px);
+  border-bottom: 1px solid #cfd3da;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.blog__tabs::-webkit-scrollbar { display: none; }
+
+/* Auto margins centre the tabs when they fit and let them scroll when they don't */
+.blog__tab:first-child { margin-left: auto; }
+.blog__tab:last-child { margin-right: auto; }
+
+.blog__tab {
+  position: relative;
+  flex: 0 0 auto;
+  padding: 16px 0;
+  border: 0;
+  background: none;
+  color: #5d6270;
+  font: inherit;
+  font-size: 1rem;
+  font-weight: 500;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+.blog__tab:hover,
+.blog__tab[aria-selected="true"] { color: #12141a; }
+
+.blog__count {
+  margin-left: 4px;
+  color: #9aa0ad;
+  font-weight: 400;
+}
+.blog__count:empty { display: none; }
+
+.blog__tab::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 2px;
+  background: #12141a;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+.blog__tab[aria-selected="true"]::after { transform: scaleX(1); }
+.blog__tab:focus-visible { outline: 3px solid #2438ff; outline-offset: 2px; border-radius: 4px; }
+
+/* Grid: 3 per row on desktop */
+.blog__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(36px, 4vw, 56px) clamp(20px, 2.5vw, 32px);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.blog__grid li { animation: blog-in 0.4s ease both; }
+
+.post {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+.post:focus-visible { outline: 3px solid #2438ff; outline-offset: 6px; border-radius: 8px; }
+
+.post__image {
+  aspect-ratio: 1.9 / 1;
+  border-radius: 4px;
+  overflow: hidden;
+  background: #eceef2;
+}
+.post__image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+@media (hover: hover) {
+  .post:hover .post__image img { transform: scale(1.04); }
+}
+
+.post__title {
+  margin: 22px 0 14px;
+  font-size: clamp(1.25rem, 1.9vw, 1.75rem);
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+/* Date, a small dot, then the category */
+.post__meta {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  color: #5d6270;
+  font-size: 0.9375rem;
+}
+.post__tag::before {
+  content: "";
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  margin: 0 10px;
+  border-radius: 50%;
+  background: currentColor;
+  vertical-align: middle;
+}
+
+.blog__empty {
+  margin: 0;
+  padding: clamp(56px, 9vw, 112px) 24px;
+  color: #5d6270;
+  font-size: 1.0625rem;
+  text-align: center;
+  animation: blog-in 0.35s ease both;
+}
+
+@keyframes blog-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* Tablet: 2 per row */
+@media (max-width: 1024px) {
+  .blog__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+/* Mobile: 1 per row */
+@media (max-width: 640px) {
+  .blog__grid { grid-template-columns: minmax(0, 1fr); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .blog__grid li,
+  .blog__empty { animation: none; }
+  .post__image img,
+  .blog__tab::after { transition: none; }
+}

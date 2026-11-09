@@ -1,0 +1,211 @@
+/* Tokens match the home page */
+:root {
+  --ink: #12141a;
+  --body: #3a3f4b;
+  --muted: #5d6270;
+  --accent: #bef164;
+  --white: #ffffff;
+  --pad: clamp(24px, 5vw, 72px);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--white);
+  color: var(--ink);
+  font-family: var(--font-body, "Diatype"), sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Hero */
+.about-hero {
+  background: var(--white);
+}
+
+.about-hero__banner {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  min-height: 80vh;
+  padding: 48px var(--pad);
+  background:
+    linear-gradient(0deg, rgb(0 0 0 / 58%), rgb(0 0 0 / 8%) 65%),
+    url("assets/team2.png") center / cover no-repeat;
+}
+
+.about-hero__banner-title {
+  max-width: 20ch;
+  margin: 0;
+  color: var(--white);
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  text-wrap: balance;
+}
+
+.about-hero__intro {
+  display: flex;
+  justify-content: center;
+  padding: 96px var(--pad);
+}
+
+.about-hero__content {
+  width: min(100%, 900px);
+}
+
+.about-hero__title {
+  max-width: 22ch;
+  margin: 0 auto 32px;
+  margin-bottom: 1.25em;
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 400;
+  line-height: 1.12;
+  letter-spacing: -0.03em;
+  text-align: center;
+  text-wrap: balance;
+}
+
+.about-hero__description p {
+  max-width: 60ch;
+  margin: 0 auto 1.25em;
+  color: var(--body);
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  text-align: justify;
+}
+
+.about-hero__description p:last-child {
+  margin-bottom: 0;
+}
+
+.careers {
+  padding: clamp(40px, 6vw, 88px) clamp(24px, 5vw, 72px) clamp(64px, 10vw, 140px);
+  background: #fff;
+  color: #12141a;
+  font-family: "Poppins", system-ui, sans-serif;
+}
+
+.careers__inner {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+[data-careers] [hidden] { display: none !important; }
+
+/* Tabs with the line divider underneath */
+.careers__tabs {
+  display: flex;
+  gap: clamp(20px, 3.5vw, 40px);
+  border-bottom: 1px solid #cfd3da;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.careers__tabs::-webkit-scrollbar { display: none; }
+
+.careers__tab {
+  position: relative;
+  flex: 0 0 auto;
+  padding: 16px 0;
+  border: 0;
+  background: none;
+  color: #5d6270;
+  font: inherit;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+.careers__tab:hover,
+.careers__tab[aria-selected="true"] { color: #12141a; }
+
+/* Active underline sits on top of the divider */
+.careers__tab::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 2px;
+  background: #12141a;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+.careers__tab[aria-selected="true"]::after { transform: scaleX(1); }
+
+.careers__tab:focus-visible { outline: 3px solid #2438ff; outline-offset: 2px; border-radius: 4px; }
+
+/* Job list with feint dividers */
+.careers__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.careers__list li {
+  border-bottom: 1px solid #eceef2;
+  animation: careers-in 0.35s ease both;
+}
+
+.job {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px 14px;
+  padding: 26px 0;
+  color: inherit;
+  text-decoration: none;
+}
+.job:focus-visible { outline: 3px solid #2438ff; outline-offset: 2px; border-radius: 6px; }
+
+.job__title {
+  font-size: clamp(1.125rem, 2vw, 1.5rem);
+  letter-spacing: -0.015em;
+}
+
+.job__badge {
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: rgba(190, 241, 100, 0.4);
+  color: #2c4a05;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.job__arrow {
+  flex: 0 0 auto;
+  width: 28px;
+  height: 28px;
+  margin-left: auto;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: transform 0.25s ease;
+}
+.job:hover .job__arrow,
+.job:focus-visible .job__arrow { transform: translate(3px, -3px); }
+
+/* Empty state */
+.careers__empty {
+  margin: 0;
+  padding: clamp(56px, 9vw, 112px) 24px;
+  color: #5d6270;
+  font-size: 1.0625rem;
+  text-align: center;
+  animation: careers-in 0.35s ease both;
+}
+
+@keyframes careers-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .careers__list li,
+  .careers__empty,
+  .careers__tab::after,
+  .job__arrow { animation: none; transition: none; }
+}

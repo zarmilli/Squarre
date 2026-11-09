@@ -1,0 +1,375 @@
+/* Tokens match the home page */
+:root {
+  --ink: #12141a;
+  --body: #3a3f4b;
+  --muted: #5d6270;
+  --accent: #bef164;
+  --white: #ffffff;
+  --pad: clamp(24px, 5vw, 72px);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--white);
+  color: var(--ink);
+  font-family: var(--font-body, "Diatype"), sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Hero */
+.about-hero {
+  background: var(--white);
+}
+
+.about-hero__banner {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  min-height: 80vh;
+  padding: 48px var(--pad);
+  background:
+    linear-gradient(0deg, rgb(0 0 0 / 58%), rgb(0 0 0 / 8%) 65%),
+    url("assets/testimonial2.png") center / cover no-repeat;
+}
+
+.about-hero__banner-title {
+  max-width: 20ch;
+  margin: 0;
+  color: var(--white);
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  text-wrap: balance;
+}
+
+.about-hero__intro {
+  display: flex;
+  justify-content: center;
+  padding: 96px var(--pad);
+}
+
+.about-hero__content {
+  width: min(100%, 900px);
+}
+
+.about-hero__title {
+  max-width: 22ch;
+  margin: 0 auto 32px;
+  margin-bottom: 1.25em;
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 400;
+  line-height: 1.12;
+  letter-spacing: -0.03em;
+  text-align: center;
+  text-wrap: balance;
+}
+
+.about-hero__description p {
+  max-width: 60ch;
+  margin: 0 auto 1.25em;
+  color: var(--body);
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  text-align: justify;
+}
+
+.about-hero__description p:last-child {
+  margin-bottom: 0;
+}
+
+.contact {
+  padding: clamp(40px, 6vw, 88px) clamp(24px, 5vw, 72px) clamp(64px, 10vw, 140px);
+  background: #fff;
+  color: #12141a;
+  font-family: "Poppins", system-ui, sans-serif;
+}
+
+.contact__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(16px, 2.5vw, 32px);
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+}
+
+/* Card: thin border, square corners, content anchored to the bottom-left */
+.contact-card {
+  display: flex;
+  align-items: flex-end;
+  height: 100%;
+  min-height: clamp(300px, 28vw, 380px);
+  padding: clamp(28px, 4vw, 48px);
+  border: 1px solid #e2e5ea;
+  border-radius: 4px;
+  background: #fff;
+  color: inherit;
+  text-decoration: none;
+  transition: border-color 0.3s ease;
+}
+.contact-card:hover,
+.contact-card:focus-visible { border-color: #12141a; }
+.contact-card:focus-visible { outline: 3px solid #2438ff; outline-offset: 3px; }
+
+.contact-card__body { width: 100%; }
+
+.contact-card__icon {
+  display: block;
+  width: 28px;
+  height: 28px;
+  margin-bottom: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.contact-card__title {
+  margin: 0;
+  font-size: clamp(1.125rem, 1.6vw, 1.375rem);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+/* Hidden description. Because the card is bottom-aligned, growing it pushes the icon and title up. */
+.contact-card__reveal {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  transition: grid-template-rows 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease;
+}
+.contact-card__reveal-inner {
+  min-height: 0;
+  overflow: hidden;
+}
+
+.contact-card__text {
+  margin: 12px 0 0;
+  color: #3a3f4b;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+}
+
+.contact-card__detail {
+  display: block;
+  margin-top: 12px;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  overflow-wrap: anywhere;
+}
+
+/* Reveal on hover and keyboard focus */
+.contact-card:focus-visible .contact-card__reveal {
+  grid-template-rows: 1fr;
+  opacity: 1;
+}
+@media (hover: hover) {
+  .contact-card:hover .contact-card__reveal {
+    grid-template-rows: 1fr;
+    opacity: 1;
+  }
+}
+
+/* Touch screens can't hover, so the description is always shown */
+@media (hover: none) {
+  .contact-card__reveal {
+    grid-template-rows: 1fr;
+    opacity: 1;
+  }
+}
+
+/* Stack on tablet and mobile */
+@media (max-width: 860px) {
+  .contact__grid { grid-template-columns: minmax(0, 1fr); }
+  .contact-card { min-height: 260px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-card,
+  .contact-card__reveal { transition: none; }
+}
+
+.support {
+  --support-top: 96px; /* set this to your navbar's height (use 0 if the navbar isn't fixed) */
+  --g-ease: cubic-bezier(0.4, 0, 0.2, 1);
+  padding: clamp(40px, 6vw, 88px) clamp(24px, 5vw, 72px) clamp(64px, 10vw, 140px);
+  background: #fff;
+  color: #12141a;
+  font-family: "Poppins", system-ui, sans-serif;
+}
+
+/* ---------- Guides accordion ---------- */
+.guides {
+  max-width: 1240px;
+  margin: clamp(64px, 9vw, 120px) auto 0;
+}
+
+.guides__title {
+  margin: 0 0 clamp(24px, 3vw, 40px);
+  font-size: clamp(1.75rem, 3.6vw, 2.75rem);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
+.guides__list { border-top: 1px solid #e2e5ea; }
+
+.guide {
+  border-bottom: 1px solid #e2e5ea;
+  scroll-margin-top: var(--support-top); /* keeps shared links clear of a fixed navbar */
+}
+
+.guide__heading { margin: 0; font: inherit; }
+
+.guide__trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  width: 100%;
+  padding: clamp(22px, 3vw, 32px) 0;
+  border: 0;
+  background: none;
+  color: #5d6270;
+  font: inherit;
+  font-size: clamp(1.375rem, 2.6vw, 2rem);
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  text-align: left;
+  cursor: pointer;
+  transition: color 0.4s var(--g-ease);
+}
+.guide.is-open .guide__trigger,
+.guide__trigger:hover { color: #12141a; }
+.guide__trigger:focus-visible { outline: 3px solid #2438ff; outline-offset: 2px; border-radius: 6px; }
+
+/* Plus turns into a minus when open */
+.guide__icon {
+  flex: 0 0 auto;
+  width: 28px;
+  height: 28px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+}
+.guide__icon-v {
+  transform-box: fill-box;
+  transform-origin: center;
+  transition: transform 0.5s var(--g-ease);
+}
+.guide.is-open .guide__icon-v { transform: scaleY(0); }
+
+/* Smooth open and close: animate the row height from 0fr to 1fr */
+.guide__panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  visibility: hidden;
+  transition: grid-template-rows 0.6s var(--g-ease), visibility 0s linear 0.6s;
+}
+.guide.is-open .guide__panel {
+  grid-template-rows: 1fr;
+  visibility: visible;
+  transition-delay: 0s;
+}
+
+.guide__body { min-height: 0; overflow: hidden; }
+
+.guide__content {
+  padding-bottom: clamp(32px, 5vw, 56px);
+  opacity: 0;
+  transform: translateY(-8px);
+  transition: opacity 0.4s var(--g-ease), transform 0.5s var(--g-ease);
+}
+.guide.is-open .guide__content {
+  opacity: 1;
+  transform: none;
+  transition-delay: 0.15s;
+}
+
+.guide__intro {
+  max-width: 64ch;
+  margin: 0 0 clamp(32px, 4vw, 48px);
+  color: #3a3f4b;
+  font-size: clamp(1rem, 1.5vw, 1.1875rem);
+  line-height: 1.7;
+}
+
+/* Steps: explainer on the left, 16:9 screenshot on the right */
+.steps {
+  display: grid;
+  gap: clamp(36px, 5vw, 64px);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.step {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: clamp(24px, 4vw, 56px);
+  align-items: center;
+}
+
+.step__num { color: #5d6270; font-size: 0.875rem; font-weight: 500; }
+
+.step__title {
+  margin: 6px 0 12px;
+  font-size: clamp(1.25rem, 2vw, 1.625rem);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+}
+
+.step__text p {
+  margin: 0;
+  color: #3a3f4b;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.step__image {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: top;
+  border: 1px solid #e2e5ea;
+  border-radius: 12px;
+  background: #eceef2;
+}
+
+/* Troubleshooting note */
+.guide__tip {
+  max-width: 72ch;
+  margin: clamp(32px, 4vw, 48px) 0 0;
+  padding: 18px 22px;
+  border-left: 3px solid #bef164;
+  border-radius: 4px;
+  background: #f3fce3;
+  color: #3a3f4b;
+  font-size: 0.9375rem;
+  line-height: 1.65;
+}
+.guide__tip strong { color: #12141a; font-weight: 500; }
+
+/* Used briefly on page load so the right guide is open without animating */
+.guides.is-instant * { transition: none !important; }
+
+@media (max-width: 860px) {
+  .step { grid-template-columns: minmax(0, 1fr); gap: 20px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .guide__trigger,
+  .guide__icon-v,
+  .guide__panel,
+  .guide__content { transition: none; }
+}

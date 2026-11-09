@@ -1,0 +1,310 @@
+/* Tokens match the home page */
+:root {
+  --ink: #12141a;
+  --body: #3a3f4b;
+  --muted: #5d6270;
+  --accent: #bef164;
+  --white: #ffffff;
+  --pad: clamp(24px, 5vw, 72px);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--white);
+  color: var(--ink);
+  font-family: var(--font-body, "Diatype"), sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Hero */
+.about-hero {
+  background: var(--white);
+}
+
+.about-hero__banner {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  min-height: 80vh;
+  padding: 48px var(--pad);
+  background:
+    linear-gradient(0deg, rgb(0 0 0 / 58%), rgb(0 0 0 / 8%) 65%),
+    url("assets/testimonial3.png") top / cover no-repeat;
+}
+
+.about-hero__banner-title {
+  max-width: 20ch;
+  margin: 0;
+  color: var(--white);
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  text-wrap: balance;
+}
+
+.about-hero__intro {
+  display: flex;
+  justify-content: center;
+  padding: 96px var(--pad);
+}
+
+.about-hero__content {
+  width: min(100%, 900px);
+}
+
+.about-hero__title {
+  max-width: 22ch;
+  margin: 0 auto 32px;
+  margin-bottom: 1.25em;
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 400;
+  line-height: 1.12;
+  letter-spacing: -0.03em;
+  text-align: center;
+  text-wrap: balance;
+}
+
+.about-hero__description p {
+  max-width: 60ch;
+  margin: 0 auto 1.25em;
+  color: var(--body);
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  text-align: justify;
+}
+
+.about-hero__description p:last-child {
+  margin-bottom: 0;
+}
+
+.terms {
+  --pad: clamp(24px, 5vw, 72px);
+  --toc-top: 96px; /* set this to your navbar's height (use 0 if the navbar isn't fixed) */
+  padding: clamp(40px, 6vw, 88px) var(--pad) clamp(64px, 10vw, 140px);
+  background: #fff;
+  color: #12141a;
+  font-family: "Poppins", system-ui, sans-serif;
+}
+
+
+.terms__inner { min-width: 0; }
+
+.terms p { margin: 0; }
+
+.terms a {
+  color: #86c120;
+  text-underline-offset: 3px;
+}
+.terms a:hover { text-decoration-thickness: 2px; }
+.terms a:focus-visible { outline: 3px solid #2438ff; outline-offset: 2px; border-radius: 2px; }
+
+.terms__updated {
+  margin-bottom: 32px;
+  color: #5d6270;
+  font-size: 0.9375rem;
+}
+
+.terms__lead {
+  margin-bottom: 1.25em;
+  color: #3a3f4b;
+  font-size: 1.0625rem;
+  line-height: 1.75;
+}
+.terms__lead strong { color: #12141a; font-weight: 500; }
+
+/* Each numbered section, separated by a feint line */
+.terms__section {
+  margin-top: clamp(40px, 6vw, 64px);
+  padding-top: clamp(28px, 4vw, 40px);
+  border-top: 1px solid #eceef2;
+}
+
+.terms__section,
+.clause { scroll-margin-top: var(--toc-top); }
+
+.terms__heading {
+  margin: 0 0 24px;
+  font-size: clamp(1.5rem, 2.6vw, 2rem);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+/* Two columns: contents on the left, text on the right */
+.terms__layout {
+  display: grid;
+  grid-template-columns: 220px minmax(0, 760px);
+  gap: clamp(40px, 6vw, 88px);
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Sticky table of contents */
+.toc {
+  position: sticky;
+  top: calc(var(--toc-top) + 16px);
+  align-self: start;
+  max-height: calc(100vh - var(--toc-top) - 40px);
+  overflow-y: auto;
+  scrollbar-width: thin;
+}
+
+.toc__title {
+  margin: 0 0 14px;
+  color: #5d6270;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.toc__list {
+  margin: 0;
+  padding: 0;
+  border-left: 1px solid #eceef2;
+  list-style: none;
+}
+
+.toc a {
+  display: block;
+  margin-left: -1px;
+  padding: 7px 0 7px 16px;
+  border-left: 2px solid transparent;
+  color: #5d6270;
+  font-size: 0.9375rem;
+  line-height: 1.4;
+  text-decoration: none;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+.toc a:hover { color: #12141a; }
+.toc a.is-active {
+  border-left-color: #12141a;
+  color: #12141a;
+  font-weight: 500;
+}
+.toc a:focus-visible { outline: 3px solid #2438ff; outline-offset: 2px; border-radius: 2px; }
+
+/* Smooth jumps to sections */
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
+
+/* Tablet and mobile: the contents become a sticky row of pills */
+@media (max-width: 960px) {
+  .terms__layout { grid-template-columns: minmax(0, 1fr); gap: 0; }
+
+  .toc {
+    top: var(--toc-top);
+    z-index: 5;
+    max-height: none;
+    margin: 0 calc(var(--pad) * -1) 28px;
+    padding: 0 var(--pad);
+    overflow: visible;
+    background: #fff;
+    border-bottom: 1px solid #eceef2;
+  }
+  .toc__title { display: none; }
+
+  .toc__list {
+    display: flex;
+    gap: 8px;
+    padding: 12px 0;
+    border-left: 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .toc__list::-webkit-scrollbar { display: none; }
+
+  .toc a {
+    margin: 0;
+    padding: 8px 14px;
+    border: 0;
+    border-radius: 999px;
+    background: #f2f2f4;
+    font-size: 0.875rem;
+    white-space: nowrap;
+  }
+  .toc a.is-active { background: #12141a; color: #fff; font-weight: 500; }
+
+  /* Leave room for the sticky row when jumping to a section */
+  .terms__section,
+  .clause { scroll-margin-top: calc(var(--toc-top) + 72px); }
+}
+
+/* Numbered clauses with a hanging number column */
+.clause {
+  display: grid;
+  grid-template-columns: 3.25rem minmax(0, 1fr);
+  margin-bottom: 1.1em;
+  color: #3a3f4b;
+  font-size: 1rem;
+  line-height: 1.75;
+}
+.clause__num {
+  color: #5d6270;
+  font-variant-numeric: tabular-nums;
+}
+.clause strong { color: #12141a; font-weight: 500; }
+
+/* Legal clauses that are conventionally set in capitals */
+.clause--caps .clause__text {
+  font-size: 0.9375rem;
+  text-transform: uppercase;
+}
+
+.terms__contact {
+  margin-top: clamp(40px, 6vw, 64px);
+  padding-top: 28px;
+  border-top: 1px solid #eceef2;
+  color: #3a3f4b;
+  line-height: 1.7;
+}
+
+@media (max-width: 560px) {
+  .clause { grid-template-columns: 2.75rem minmax(0, 1fr); }
+}
+
+/* Privacy page additions */
+
+/* The first section sits right under "Last updated", so it needs no divider or gap */
+.terms__updated + .terms__section {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: 0;
+}
+
+.terms__text {
+  margin-bottom: 1.1em;
+  color: #3a3f4b;
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.terms__subheading {
+  margin: 28px 0 8px;
+  font-size: 1.125rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.terms__list {
+  margin: 0 0 1.1em;
+  padding-left: 1.25rem;
+  color: #3a3f4b;
+  line-height: 1.75;
+}
+.terms__list li { margin-bottom: 0.6em; padding-left: 0.25rem; }
+.terms__list li::marker { color: #5d6270; }
+
+.terms__text strong,
+.terms__list strong { color: #12141a; font-weight: 500; }
+
+.terms__address {
+  margin-bottom: 1.1em;
+  color: #3a3f4b;
+  font-style: normal;
+  line-height: 1.75;
+}
+.terms__address strong { color: #12141a; font-weight: 500; }

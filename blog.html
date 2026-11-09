@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-MNVL438X"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Latest Blogs – Squarredesk</title>
+
+  <link rel="stylesheet" href="blog.css">
+  <link rel="stylesheet" href="footer.css">
+  <link rel="stylesheet" href="card-nav.css">
+  <link rel="stylesheet" href="fonts.css">
+</head>
+<body>
+
+  <card-nav
+        overlay-hero
+        brand-name="Squarredesk"
+        home-href="index.html"
+        cta-href="https://squarredesk.vercel.app/#/auth/sign-up"
+        login-href="https://squarredesk.vercel.app/#/auth/sign-in"
+    >
+    </card-nav>
+
+  <main>
+    <!-- Hero -->
+    <section class="about-hero">
+      <div class="about-hero__banner">
+        <h1 class="about-hero__banner-title">Blog Hall</h1>
+      </div>
+    </section>
+
+    <section class="blog" data-blog aria-label="Blog posts">
+      <div class="blog__inner">
+
+        <!-- Category tabs. The counts are filled in automatically by blog.js -->
+        <div class="blog__tabs" role="tablist" aria-label="Blog categories">
+          <button class="blog__tab" role="tab" id="blog-tab-all" data-filter="all" aria-selected="true" aria-controls="blog-panel" type="button">All <span class="blog__count" data-count></span></button>
+          <button class="blog__tab" role="tab" id="blog-tab-getting-started" data-filter="getting-started" aria-selected="false" aria-controls="blog-panel" type="button">Getting started <span class="blog__count" data-count></span></button>
+          <button class="blog__tab" role="tab" id="blog-tab-finance" data-filter="finance" aria-selected="false" aria-controls="blog-panel" type="button">Finance <span class="blog__count" data-count></span></button>
+          <button class="blog__tab" role="tab" id="blog-tab-suppliers" data-filter="suppliers" aria-selected="false" aria-controls="blog-panel" type="button">Suppliers <span class="blog__count" data-count></span></button>
+          <button class="blog__tab" role="tab" id="blog-tab-company" data-filter="company" aria-selected="false" aria-controls="blog-panel" type="button">Company <span class="blog__count" data-count></span></button>
+        </div>
+
+        <!--
+          Each post needs a data-category matching a tab's data-filter.
+          Cover images should be around 1200 x 630 and are added here in the HTML.
+        -->
+        <div id="blog-panel" role="tabpanel" aria-labelledby="blog-tab-all">
+          <ul class="blog__grid">
+
+            <li data-category="getting-started">
+              <a class="post" href="#">
+                <div class="post__image">
+                  <img src="assets/blogs/blog1.png" alt="" width="1200" height="630" loading="lazy">
+                </div>
+                <h3 class="post__title">How to launch your first website on a small budget</h3>
+                <p class="post__meta">
+                  <time datetime="2026-11-04">Nov 4, 2026</time>
+                  <span class="post__tag">Getting started</span>
+                </p>
+              </a>
+            </li>
+
+            <li data-category="finance">
+              <a class="post" href="#">
+                <div class="post__image">
+                  <img src="assets/blogs/blog2.png" alt="" width="1200" height="630" loading="lazy">
+                </div>
+                <h3 class="post__title">Managing your business finances as a first-time founder</h3>
+                <p class="post__meta">
+                  <time datetime="2026-10-28">Oct 28, 2026</time>
+                  <span class="post__tag">Finance</span>
+                </p>
+              </a>
+            </li>
+
+            <li data-category="suppliers">
+              <a class="post" href="#">
+                <div class="post__image">
+                  <img src="assets/blogs/blog3.png" alt="" width="1200" height="630" loading="lazy">
+                </div>
+                <h3 class="post__title">Finding the right suppliers without overspending</h3>
+                <p class="post__meta">
+                  <time datetime="2026-10-15">Oct 15, 2026</time>
+                  <span class="post__tag">Suppliers</span>
+                </p>
+              </a>
+            </li>
+
+          </ul>
+
+          <p class="blog__empty" data-empty hidden>No posts in this category yet.</p>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer reveal">
+
+      <div class="footer__row footer__row--top">
+        <span class="footer__name">SQUARREDESK</span>
+
+        <div class="footer__contact">
+          <a href="tel:0682734215" class="footer__contact-link" aria-label="Call">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6.5 2h3l1.5 5-2.5 1.5a11 11 0 0 0 5 5L15 11l5 1.5v3a2 2 0 0 1-2 2C10.6 17.5 6.5 13.4 6.5 4a2 2 0 0 1 0-2z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+            </svg>
+          </a>
+
+          <a href="mailto:tlihle351@gmail.com" class="footer__contact-link" aria-label="Email">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M3.5 6.5L12 13L20.5 6.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+
+          <a href="https://wa.me/27682734215" target="_blank" rel="noopener" class="footer__contact-link" aria-label="WhatsApp">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 3a9 9 0 0 0-7.79 13.5L3 21l4.62-1.2A9 9 0 1 0 12 3z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+              <path d="M8.5 8.5c0 4 3 7 7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <nav class="footer__links" aria-label="Footer navigation">
+        <div class="footer__links-column">
+          <h2 class="footer__links-title">Product</h2>
+          <a href="projects.html">Features</a>
+          <a href="pricing.html">Pricing</a>
+          <a href="Updates.html">Updates</a>
+        </div>
+        <div class="footer__links-column">
+          <h2 class="footer__links-title">Company</h2>
+          <a href="about.html">About</a>
+          <a href="careers.html">Careers</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer__links-column">
+          <h2 class="footer__links-title">Resources</h2>
+          <a href="templates.html">Templates</a>
+          <a href="blog.html">Blog</a>
+          <a href="support.html">Support</a>
+        </div>
+        <div class="footer__links-column">
+          <h2 class="footer__links-title">Legal</h2>
+          <a href="terms-of-service.html">Terms of Service</a>
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <a href="refund.html">Refund Policy</a>
+        </div>
+      </nav>
+
+      <div class="footer__row footer__row--bottom">
+        <p class="footer__copyright">
+          &copy; 2026 Squarredesk. Built using
+          <a href="https://squarre.vercel.app" target="_blank" rel="noopener">Squarredesk</a>.
+        </p>
+      </div>
+
+      <h2 class="footer__title">SQUARRE</h2>
+
+    </footer>
+    <!-- Floating Action Button -->
+    <div class="evercare-fab-wrapper" id="evercare-fab-wrapper">
+      <div class="evercare-fab-card" id="evercare-fab-card" aria-hidden="true">
+        <div class="evercare-fab-image">
+          <img src="assets/heroCTA.gif" alt="EverCare cleaning services">
+        </div>
+        <div class="evercare-fab-actions">
+          <a href="https://wa.me/27685213715" class="evercare-fab-action evercare-fab-primary" target="_blank" rel="noopener noreferrer">
+            Chat to agent
+            <svg class="evercare-fab-arrow" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <path d="M5 15 15 5M6 5h9v9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <a href="#book" class="evercare-fab-action evercare-fab-secondary">
+            Get Quote
+            <svg class="evercare-fab-arrow" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <path d="M5 15 15 5M6 5h9v9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <button class="evercare-fab" id="evercare-fab" type="button" aria-label="Open contact options" aria-expanded="false">
+        <span class="evercare-orb" aria-hidden="true">
+          <span class="evercare-orb-glow evercare-orb-glow-one"></span>
+          <span class="evercare-orb-glow evercare-orb-glow-two"></span>
+          <span class="evercare-orb-core"></span>
+        </span>
+      </button>
+    </div>
+  <script src="about.js"></script>
+  <script src="card-nav.js"></script>
+</body>
+</html>

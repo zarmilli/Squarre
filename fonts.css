@@ -1,0 +1,30 @@
+@font-face {
+  font-family: "Cormorant";
+  src: url("fonts/Cormorant_Garamond/static/CormorantGaramond-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Diatype";
+  src: url("fonts/abc-diatype-regular.otf") format("opentype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+:root {
+  --font-body: "Diatype", sans-serif;
+  --font-title: "Cormorant", serif;
+  --font-heading: var(--font-title);
+}
+
+:root body * {
+  font-family: var(--font-body);
+}
+
+:root body :is(h1, h2, h3, h4, h5, h6, [class*="title"], .faq-question) {
+  font-family: var(--font-body);
+  font-weight: 400;
+}
