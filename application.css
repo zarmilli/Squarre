@@ -1,0 +1,283 @@
+:root {
+  --ink: #12141a;
+  --body: #3a3f4b;
+  --muted: #5d6270;
+  --line: #e2e5ea;
+  --accent: #2438ff;
+  --accent-hover: #1427d6;
+  --pad: clamp(24px, 5vw, 72px);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+[hidden] { display: none !important; }
+
+body {
+  margin: 0;
+  background: #fff;
+  color: var(--ink);
+  font-family: "Poppins", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* The form is a full-height column, so the bar sits at the bottom even when a step is short */
+#applicationForm {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+.apply__content {
+  flex: 1;
+  width: 100%;
+  max-width: 680px;
+  margin: 0 auto;
+  padding: clamp(24px, 4vw, 40px) var(--pad) 40px;
+}
+
+/* Back to careers */
+.apply__back {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin: 0 0 clamp(32px, 5vw, 48px) -6px;
+  padding: 6px 10px 6px 4px;
+  border-radius: 999px;
+  color: var(--muted);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.apply__back:hover { color: var(--ink); }
+.apply__back:focus-visible,
+.apply__chevron:focus-visible,
+.apply__continue:focus-visible,
+.consent a:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+.apply__back svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Heading and progress */
+.apply__title {
+  margin: 0 0 16px;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.apply__progress {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 6px;
+}
+.apply__progress span {
+  height: 4px;
+  border-radius: 2px;
+  background: var(--line);
+  transition: background-color 0.4s ease;
+}
+.apply__progress span.is-done { background: var(--accent); }
+
+.apply__count {
+  margin: 10px 0 clamp(32px, 5vw, 48px);
+  color: var(--muted);
+  font-size: 0.8125rem;
+}
+
+/* Steps */
+.step__title {
+  margin: 0 0 24px;
+  font-size: clamp(1.875rem, 4.6vw, 3rem);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  text-wrap: balance;
+  outline: none;
+}
+
+.step p {
+  margin: 0 0 1.1em;
+  color: var(--body);
+  font-size: 1.0625rem;
+  line-height: 1.75;
+}
+
+.step__list {
+  margin: 0 0 1.1em;
+  padding-left: 1.25rem;
+  color: var(--body);
+  font-size: 1.0625rem;
+  line-height: 1.7;
+}
+.step__list li { margin-bottom: 0.75em; padding-left: 0.25rem; }
+.step__list li::marker { color: var(--muted); }
+.step strong { color: var(--ink); font-weight: 500; }
+
+/* Form */
+.field { margin-bottom: 22px; }
+.field label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 0.9375rem;
+  font-weight: 500;
+}
+
+.field input[type="text"],
+.field input[type="email"],
+.field input[type="tel"],
+.field textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid #cfd3da;
+  border-radius: 12px;
+  background: #fff;
+  color: var(--ink);
+  font: inherit;
+  font-size: 1rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.field textarea { min-height: 150px; line-height: 1.6; resize: vertical; }
+
+.field input:focus,
+.field textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(36, 56, 255, 0.15);
+  outline: none;
+}
+
+.field input[type="file"] {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px dashed #b4b9c4;
+  border-radius: 12px;
+  background: #f9fafb;
+  color: var(--muted);
+  font: inherit;
+  font-size: 0.9375rem;
+  cursor: pointer;
+}
+.field input[type="file"]::file-selector-button {
+  margin-right: 14px;
+  padding: 8px 16px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--ink);
+  color: #fff;
+  font: inherit;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+.field input[type="file"]:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+
+.consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  color: var(--body);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  cursor: pointer;
+}
+.consent input {
+  flex: 0 0 auto;
+  width: 20px;
+  height: 20px;
+  margin: 2px 0 0;
+  accent-color: var(--accent);
+}
+.consent a { color: var(--accent); text-underline-offset: 3px; }
+
+/* Message from applications.js. Add .is-error or .is-success for colour. */
+#formMessage {
+  margin: 18px 0 0;
+  color: var(--body);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  scroll-margin-bottom: 120px; /* keeps it clear of the sticky bar */
+}
+#formMessage:empty { display: none; }
+#formMessage.is-error { color: #b3261e; }
+#formMessage.is-success { color: #1b6b34; }
+
+/* Sticky bottom bar */
+.apply__bar {
+  position: sticky;
+  bottom: 0;
+  z-index: 10;
+  padding: 20px var(--pad) calc(16px + env(safe-area-inset-bottom));
+  background: linear-gradient(to top, #fff 70%, rgba(255, 255, 255, 0));
+}
+.apply__bar-inner {
+  display: flex;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.apply__continue {
+  flex: 1;
+  height: 54px;
+  padding: 0 24px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #fff;
+  font: inherit;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+.apply__continue:hover:not(:disabled) { background: var(--accent-hover); }
+.apply__continue:disabled { opacity: 0.6; cursor: not-allowed; }
+
+/* The back chevron opens up beside the button from step 2 */
+.apply__chevron {
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  width: 0;
+  height: 54px;
+  margin-right: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: #f2f2f4;
+  color: var(--ink);
+  opacity: 0;
+  visibility: hidden;
+  overflow: hidden;
+  cursor: pointer;
+  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1), margin 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+              opacity 0.3s ease, visibility 0s linear 0.4s, background-color 0.2s ease;
+}
+.apply__chevron.is-visible {
+  width: 54px;
+  margin-right: 8px;
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0s;
+}
+.apply__chevron:hover { background: #e4e6eb; }
+.apply__chevron svg {
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .apply__chevron,
+  .apply__progress span,
+  .apply__continue { transition: none; }
+}

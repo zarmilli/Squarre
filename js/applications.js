@@ -66,7 +66,7 @@ form.addEventListener('submit', async (event) => {
         full_name: formData.get('full_name'),
         email: formData.get('email'),
         phone: formData.get('phone'),
-        position: formData.get('position'),
+        position: form.dataset.position,
         cover_letter: formData.get('cover_letter'),
         cv_path: uploadData.path,
         website: formData.get('website'),
